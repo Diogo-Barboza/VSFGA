@@ -4,10 +4,10 @@ using namespace std;
 int main(){
     char pri;
     string ent;
-    int palavra = 1, cont = 0, contREAL = 0;
+    float palavra = 0, cont = 0, contREAL = 0;
 
     cin >> pri;
-    cin.ignore();
+    cin.ignore(); // limpa o buffer
     getline(cin, ent);
 
     for (int i = 0; i < ent.size(); i++)
@@ -15,7 +15,7 @@ int main(){
         if(ent[i] == pri){
             cont += 1;
         }
-        if(ent[i] == ' '){
+        if(ent[i] == ' ' || i == (ent.size() - 1)){
             palavra += 1;
             if (cont >= 1)
             {
@@ -31,7 +31,7 @@ int main(){
 
     cout << fixed << setprecision(1);
     cout << porcem << endl;
-    //cout << contREAL << endl << palavra << endl;
+    // cout << contREAL << endl << palavra << endl;
 
     return 0;
 }

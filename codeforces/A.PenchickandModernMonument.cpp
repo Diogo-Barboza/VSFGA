@@ -22,7 +22,7 @@ int main() {
             order.push_back(entorder);
         }
 
-        for (int k = 0; k < tamvec; k++) //[5,4,3,2,1]
+        for (int k = 0; k < tamvec; k++) 
         {
             if(order[k] < order[k + 1]){
                 if(cont == 2){
@@ -32,11 +32,8 @@ int main() {
                 swap(order[k], contagem);
                 cont++;
             }
-
             cout << order[i] << ',';
         }
-        
     }
-    
     return 0;
 }
