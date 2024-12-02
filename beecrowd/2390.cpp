@@ -14,11 +14,15 @@ int main(){
     
     for (int i = 1; i < entradas.size(); i++)
     {
-        dif = entradas[i] - entradas[i-1];
+        if (entradas[i] > (entradas[i-1]+10))
+        {
+            dif = 10;
+        }else{
+            dif = entradas[i] - entradas[i-1];
+        }
         sum += dif;
     }
     
-
     cout << sum << endl;
 
     return 0;
