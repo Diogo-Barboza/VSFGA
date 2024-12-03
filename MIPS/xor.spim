@@ -1,0 +1,37 @@
+.data
+quebralinha: .asciiz "\n"
+.text
+main:
+    li		$v0, 5		# $v0 = 5
+    syscall
+    move 	$s0, $v0		# $t0 = $v0 
+
+    laco: beq $s0, $zero, termina
+        subi $s0, $s0, 1 # i--
+        
+        li $v0, 5 # Primeiro
+        syscall
+        move $t8, $v0
+
+        li $v0, 12
+        syscall
+        move $t7, $v0 # Espaco
+        
+        li $v0, 5 # segundo
+        syscall
+        move $t9, $v0
+
+        beq $t8, $9,  igual
+        bne $t8, $t9, diferente
+    
+    termina: li $v0, 10
+        syscall
+
+    diferente: addi $a0, $zero, 0			# $a0 = zero, + 0
+        li $v0, 1
+        syscall
+        j laco
+    igual: addi $a0, $zero, 1
+        li $v0, 1
+        syscall
+        j laco
