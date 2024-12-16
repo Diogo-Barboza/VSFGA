@@ -8,7 +8,7 @@
     - [ ] [ABC 206C - Swappable](https://atcoder.jp/contests/abc206/tasks/abc206_c)
     - [ ] [ABC 210C - Colorful Candies](https://atcoder.jp/contests/abc210/tasks/abc210_c)
     - [ ] [ABC 215C - One More aab aba baa](https://atcoder.jp/contests/abc215/tasks/abc215_c)
-    - [ ] [8A - Train and Peter](https://codeforces.com/problemset/problem/8/A)
+    - [X] [8A - Train and Peter](https://codeforces.com/problemset/problem/8/A)
     - [ ] [202A - LLPS](https://codeforces.com/problemset/problem/202/A)
     - [ ] [486C - Palindrome Transformation](https://codeforces.com/problemset/problem/486/C)
     - [ ] [520A - Pangram](https://codeforces.com/problemset/problem/520/A)

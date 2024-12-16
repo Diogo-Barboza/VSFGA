@@ -1,16 +1,28 @@
 li $v0, 5
 syscall
-move $t0, $v0 # $t0 = i
+move $t0, $v0    # $t0 = i
 
 li $v0, 5
 syscall
-move $t1, $v0 # $t1 = j
+move $t1, $v0    # $t1 = j
 
-li $v0, 5 #v0 = N
-syscall 
-#move $t2, $v0 # $t2 = N
+li $v0, 5
+syscall
+move $t2, $v0    # $t2 = N
 
-lw	$t2, $t1($s0) # $t2 = A[j]
-add	$t1, $t2, $v0		# $t1 = $t2 + $v0
-sw	$t1, $t0($s0)		# 
+# Calcular endereço de A[j]: $t3 = $s0 + 4 * j
+mul $t3, $t1, 4
+add $t3, $t3, $s0
 
+# Carregar A[j] em $t4
+lw $t4, 0($t3)
+
+# Somar A[j] + N e armazenar em $t5
+add $t5, $t4, $t2
+
+# Calcular endereço de A[i]: $t6 = $s0 + 4 * i
+mul $t6, $t0, 4
+add $t6, $t6, $s0
+
+# Armazenar resultado em A[i]
+sw $t5, 0($t6)

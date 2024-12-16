@@ -1,0 +1,56 @@
+.data
+newline: .asciiz "\n"
+
+.text
+main:
+    # Ler o número n (quantidade de números)
+    li $v0, 5
+    syscall
+    move $t0, $v0  # $t0 = n (quantidade de números)
+
+    # Contador i = 0
+    li $t2, 1
+
+    # Ler o primeiro número (será o maior inicialmente)
+    li $v0, 5
+    syscall
+    move $t1, $v0  # $t1 = primeiro número lido (inicializa o maior)
+
+loop_start:
+    # Se i == n, sai do loop
+    beq $t2, $t0, end_loop
+
+    # Ler o próximo número
+    li $v0, 5
+    syscall
+    move $t3, $v0  # $t3 = número lido
+
+    # Comparar o número lido com o maior atual (armazenado em $t1)
+    bge $t3, $t1, update_max  # Se número lido >= maior atual, atualiza maior
+
+    # Continuar para o próximo número
+    j next_iteration
+
+update_max:
+    # Atualizar maior número (maior = número lido)
+    move $t1, $t3
+
+next_iteration:
+    # Incrementar o contador i
+    addi $t2, $t2, 1
+    j loop_start
+
+end_loop:
+    # Imprimir o maior número encontrado
+    li $v0, 1
+    move $a0, $t1  # Move o maior número para $a0
+    syscall
+
+    # Exibir a nova linha
+    li $v0, 4
+    la $a0, newline
+    syscall
+
+    # Finalizar o programa
+    li $v0, 10
+    syscall
