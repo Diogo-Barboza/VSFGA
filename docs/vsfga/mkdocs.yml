@@ -1,13 +1,12 @@
 site_name: VSFGA
-site_url: https://diogo-barboza.github.io/ProgrammingCodes/
-repo_url: https://github.com/Diogo-Barboza/ProgrammingCodes
+
+# repo_url: https://github.com/Diogo-Barboza/ProgrammingCodes
 
 plugins: 
   - search
 
 nav:
   - Home: index.md
-  - About: about.md
 
 theme:
   name: material
@@ -35,4 +34,13 @@ theme:
   features:
     - navigation.instant
     - navigation.instant.progress
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.path
+    - navigation.top
+    - content.code.copy
+    - toc.integrate
+    - content.tabs.link
     - header.autohide
