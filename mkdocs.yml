@@ -1,1 +1,37 @@
-site_name: My Docs
+site_name: VSFGA
+site_url: https://diogo-barboza.github.io/ProgrammingCodes/
+
+plugins: 
+  - search
+
+nav:
+  - Home: index.md
+  - About: about.md
+
+theme:
+  name: material
+  language: pt-BR
+  logo: assets/logo3.png
+  palette: 
+    #Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: light blue
+      accent: cyan
+      toggle:
+        icon: material/toggle-switch
+        name: Modo escuro
+
+    #White mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: blue
+      accent: cyan
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Modo claro
+
+  features:
+    - navigation.instant
+    - navigation.instant.progress
+    - header.autohide
