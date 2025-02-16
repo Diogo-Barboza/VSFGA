@@ -1,4 +1,6 @@
 site_name: VSFGA
+site_url: https://diogo-barboza.github.io/ProgrammingCodes/
+repo_url: https://github.com/Diogo-Barboza/ProgrammingCodes
 
 plugins: 
   - search
