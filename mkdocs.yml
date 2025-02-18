@@ -9,6 +9,7 @@ nav:
   - Home: index.md
   - 2024.2: 
     - Requisitos: sections/2024.2/Requisitos.md
+    - EDA: sections/2024.2/EDA.md
 
 theme:
   name: material
