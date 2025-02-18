@@ -108,10 +108,12 @@ Usa fila de prioridade para ordenar elementos, sem necessidade de espaços extra
 ### Intro Sort
 
 Importante organização de algoritmos de ordenação. Pois é **HÍBRIDO**, com duas opções:
+
 - quick + merge(Mais espaço) + insertion
 - quick + heap(maior constante) + insertion
 
 Solução para usar as eficiências e evitar as deficiências de cada um:
+
 - Insertion -> **ADAPTATIVO**
 - Quick -> Bom desempenho na maioria dos casos e inplace (- memória extra)
 - Merge e Heap -> Desempenho previsível para todos os casos
