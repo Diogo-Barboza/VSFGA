@@ -731,20 +731,26 @@
 <li>Não adaptativo</li>
 </ul>
 <h3 id="intro-sort">Intro Sort</h3>
-<p>Importante organização de algoritmos de ordenação. Pois é <strong>HÍBRIDO</strong>, com duas opções:
-- quick + merge(Mais espaço) + insertion
-- quick + heap(maior constante) + insertion</p>
-<p>Solução para usar as eficiências e evitar as deficiências de cada um:
-- Insertion -&gt; <strong>ADAPTATIVO</strong>
-- Quick -&gt; Bom desempenho na maioria dos casos e inplace (- memória extra)
-- Merge e Heap -&gt; Desempenho previsível para todos os casos
-- Quando a profundidade da recusrividade atinge um máximo estipulado alterna-se para outro método de ordenação
-- Complexidade no <strong>pior caso</strong>: O(n log n)
-- In-place 
-    - Merge: Espaço extra, proporcional a N.
-    - Heap e quick: <strong>IN-PLACE</strong>
-- Não estável
-- Não adaptativo</p>
+<p>Importante organização de algoritmos de ordenação. Pois é <strong>HÍBRIDO</strong>, com duas opções:</p>
+<ul>
+<li>quick + merge(Mais espaço) + insertion</li>
+<li>quick + heap(maior constante) + insertion</li>
+</ul>
+<p>Solução para usar as eficiências e evitar as deficiências de cada um:</p>
+<ul>
+<li>Insertion -&gt; <strong>ADAPTATIVO</strong></li>
+<li>Quick -&gt; Bom desempenho na maioria dos casos e inplace (- memória extra)</li>
+<li>Merge e Heap -&gt; Desempenho previsível para todos os casos</li>
+<li>Quando a profundidade da recusrividade atinge um máximo estipulado alterna-se para outro método de ordenação</li>
+<li>Complexidade no <strong>pior caso</strong>: O(n log n)</li>
+<li>In-place <ul>
+<li>Merge: Espaço extra, proporcional a N.</li>
+<li>Heap e quick: <strong>IN-PLACE</strong></li>
+</ul>
+</li>
+<li>Não estável</li>
+<li>Não adaptativo</li>
+</ul>
 <h3 id="counting-sort">Counting Sort</h3>
 <ul>
 <li>Linearítmicos<ul>
