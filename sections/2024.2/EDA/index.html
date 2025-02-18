@@ -540,8 +540,53 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#heap-sort" class="md-nav__link">
+    <span class="md-ellipsis">
+      Heap Sort
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intro-sort" class="md-nav__link">
+    <span class="md-ellipsis">
+      Intro Sort
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#counting-sort" class="md-nav__link">
+    <span class="md-ellipsis">
+      Counting Sort
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#radix-sort" class="md-nav__link">
+    <span class="md-ellipsis">
+      Radix Sort
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumo-das-ordenacoes-existentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resumo das Ordenaçoes Existentes
+    </span>
+  </a>
   
 </li>
       
@@ -597,6 +642,7 @@
 <li><strong>Exemplo:</strong> Busca sequencial -&gt; O(n), custo cresce no máximo de acordo com crescimento de n.</li>
 <li>Com o custo de F(n) = 4 * n ^ 2 + 4 * n + 1, <strong>complexidade -&gt; O(n ^ 2).</strong></li>
 </ul>
+<hr />
 <h2 id="ordenacao-de-dados">Ordenação de Dados</h2>
 <p>Organização otimiza as buscas, mais previsibilidade.</p>
 <ul>
@@ -643,6 +689,7 @@
 <li>Não estável</li>
 <li>In-place</li>
 </ul>
+<hr />
 <h2 id="ordenacao-de-dados-eficiente">Ordenação de Dados Eficiente</h2>
 <ul>
 <li>Linerítmicos<ul>
@@ -675,6 +722,70 @@
 <li>Não estável.</li>
 <li>Médio -&gt; n log n.</li>
 </ul>
+<h3 id="heap-sort">Heap Sort</h3>
+<p>Usa fila de prioridade para ordenar elementos, sem necessidade de espaços extras</p>
+<ul>
+<li>Complexidade = O(n log n)</li>
+<li>In-place</li>
+<li>Não estável</li>
+<li>Não adaptativo</li>
+</ul>
+<h3 id="intro-sort">Intro Sort</h3>
+<p>Importante organização de algoritmos de ordenação. Pois é <strong>HÍBRIDO</strong>, com duas opções:
+- quick + merge(Mais espaço) + insertion
+- quick + heap(maior constante) + insertion</p>
+<p>Solução para usar as eficiências e evitar as deficiências de cada um:
+- Insertion -&gt; <strong>ADAPTATIVO</strong>
+- Quick -&gt; Bom desempenho na maioria dos casos e inplace (- memória extra)
+- Merge e Heap -&gt; Desempenho previsível para todos os casos
+- Quando a profundidade da recusrividade atinge um máximo estipulado alterna-se para outro método de ordenação
+- Complexidade no <strong>pior caso</strong>: O(n log n)
+- In-place 
+    - Merge: Espaço extra, proporcional a N.
+    - Heap e quick: <strong>IN-PLACE</strong>
+- Não estável
+- Não adaptativo</p>
+<h3 id="counting-sort">Counting Sort</h3>
+<ul>
+<li>Linearítmicos<ul>
+<li>O(n log n)</li>
+<li>Ordenação por comparação do valor das chaves</li>
+</ul>
+</li>
+<li>
+<p>Lineares</p>
+<ul>
+<li>O(n)</li>
+<li>Ordenação por comparação das partes de formam as chaves</li>
+</ul>
+</li>
+<li>
+<p>Contar frequência das chaves </p>
+</li>
+<li>Calcular as posições das frequências</li>
+<li>
+<p>Distribuir as chaves</p>
+</li>
+<li>
+<p>Complexidade no pior caso: O(N + R)</p>
+<ul>
+<li>N: Número de chaves</li>
+<li>R: Intervalo das chaves</li>
+</ul>
+</li>
+<li>Não in-place</li>
+<li>Estável</li>
+<li>Não adaptativo</li>
+</ul>
+<h3 id="radix-sort">Radix Sort</h3>
+<p>Ordenar pela raix(radix) da representação dos dados. Decompor as estruturas</p>
+<ul>
+<li>Envolve operações custosas</li>
+<li>Alternativa: Decompor por bytes.</li>
+</ul>
+<hr />
+<h2 id="resumo-das-ordenacoes-existentes">Resumo das Ordenaçoes Existentes</h2>
+<p><img alt="alt text" src="../../../assets/image.png" /></p>
 
 
 
