@@ -10,6 +10,7 @@ nav:
   - 2024.2: 
     - Requisitos: sections/2024.2/Requisitos.md
     - EDA: sections/2024.2/EDA.md
+    - FAC: sections/2024.2/FAC.md
 
 theme:
   name: material
@@ -48,3 +49,7 @@ theme:
     - toc.integrate
     - content.tabs.link
     - header.autohide
+  
+  markdown_extensions:
+    - markdown.extensions.attr_list
+    - attr_list
