@@ -3,4 +3,4 @@ Estas são exercícios de listas para preparação para a OBI nível Sênior. Tr
 
 ## Links (Atualizados conforme finalização das listas)
 
-(Lista 1)[https://moj.naquadah.com.br/cgi-bin/contest.sh/ejr_obi_ns_01]
+[Lista 1](https://moj.naquadah.com.br/cgi-bin/contest.sh/ejr_obi_ns_01)
