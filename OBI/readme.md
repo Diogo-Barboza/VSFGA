@@ -3,5 +3,5 @@ Estas são exercícios de listas para preparação para a OBI nível Sênior. Tr
 
 ## Links (Atualizados conforme finalização das listas)
 
-[Lista 1](https://moj.naquadah.com.br/cgi-bin/contest.sh/ejr_obi_ns_01)
-[Lista 2](https://moj.naquadah.com.br/cgi-bin/contest.sh/ejr_obi_ns_02)
+[Operadores e condicionais](https://moj.naquadah.com.br/cgi-bin/contest.sh/ejr_obi_ns_01) <br>
+[Laços e Strings](https://moj.naquadah.com.br/cgi-bin/contest.sh/ejr_obi_ns_02) <br>
