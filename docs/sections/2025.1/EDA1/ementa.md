@@ -1,6 +1,6 @@
 # Ementa de Estrutura de Dados 1
 
-1. [Recursão]()
+1. [Recursão](recursao.md)
 2. [Ponteiros e alocação dinâmica de memória]()
 3. [Estuturas lineares: listas, filas e pilhas]()
 4. [Introdução à complexidade computacional e notação Big-O]()

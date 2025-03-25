@@ -12,8 +12,11 @@ nav:
     - EDA: sections/2024.2/EDA.md
     - FAC: sections/2024.2/FAC.md
   - 2025.1:
-    - EDA - Jhon: sections/2025.1/EDA1/ementa.md 
-
+    - EDA - Jhon: sections/2025.1/EDA1/ementa.md
+    - SDB2: sections/2025.1/SDB2/ementa.md
+    - Testes de Software: sections/2025.1/Testes/ementa.md
+    - IHC: sections/2025.1/IHC/ementa.md
+    - Arquitetura e Desenho de Software: sections/2025.1/ADS/ementa.md
 theme:
   name: material
   language: pt-BR
