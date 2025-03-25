@@ -1,3 +1,5 @@
 #Ignora todos os arquivos sem extensão
 */a.out
 /site
+/docs
+mkdocs.yml
