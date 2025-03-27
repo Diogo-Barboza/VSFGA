@@ -9,10 +9,6 @@
       
       
       
-        <link rel="prev" href="../../../2024.2/FAC/">
-      
-      
-        <link rel="next" href="../../SDB2/ementa/">
       
       
       <link rel="icon" href="../../../../assets/favicon.png">
@@ -20,7 +16,7 @@
     
     
       
-        <title>EDA - Jhon - VSFGA</title>
+        <title>Introdução - VSFGA</title>
       
     
     
@@ -72,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ementa-de-estrutura-de-dados-1" class="md-skip">
+        <a href="#introducao" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -107,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              EDA - Jhon
+              Introdução
             
           </span>
         </div>
@@ -229,13 +225,11 @@
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../ementa/" class="md-tabs__link">
           
   
   2025.1
@@ -422,30 +416,27 @@
       
   
   
-    
   
   
-  
     
     
     
-      
-        
-        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -456,7 +447,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             2025.1
@@ -467,19 +458,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../ementa/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -488,7 +470,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -600,19 +581,60 @@
                   
 
 
-<h1 id="ementa-de-estrutura-de-dados-1">Ementa de Estrutura de Dados 1</h1>
-<ol>
-<li><a href="../intro/">Introdução</a></li>
-<li><a href="../recursao/">Recursão</a></li>
-<li><a href="">Ponteiros e alocação dinâmica de memória</a></li>
-<li><a href="">Estuturas lineares: listas, filas e pilhas</a></li>
-<li><a href="">Introdução à complexidade computacional e notação Big-O</a></li>
-<li><a href="">Algoritmos de busca</a></li>
-<li><a href="">Algoritmos de ordenação O(n)</a></li>
-<li><a href="">Algoritmos em árvores binária</a></li>
-<li><a href="">Organização de arquivos</a></li>
-<li><a href="">Aplicações</a></li>
-</ol>
+<h1 id="introducao">Introdução</h1>
+<h2 id="como-medir-o-desempenho-de-algoritmo">Como medir o desempenho de algoritmo?</h2>
+<ul>
+<li>Tempo de execução</li>
+<li>Memória
+Entretando, essas duas podem variar e existe um <strong>trade off</strong> entre elas.</li>
+<li>Linguagem de programação e compilador</li>
+<li>Quantidade de operações<ul>
+<li>Única que não é variável.</li>
+</ul>
+</li>
+</ul>
+<h2 id="problema-encontrar-o-maior-valor-de-um-vetor">Problema: Encontrar o maior valor de um vetor.</h2>
+<pre><code class="language-C">int main(){
+    int v[10];
+    int maior = v[0]; // Custo de 1 para alocação de memória
+    for(int i = 1; i &lt; 10; i++){ // (1 alocação)(n para iteração)(n-1 para soma de i)
+        if(v[i] &gt; maior){ // n-1 iteração
+            maior - v[i]; // no pior caso n-1
+        }
+    }
+    printf(&quot;o maior é: %d&quot;, maior);
+}
+</code></pre>
+<p>Portanto, somanto todos os custos -&gt; &lt;= 1 + 1 + n + n - 1 + n - 1 + n - 1 + 1. Ou seja, &lt;= 4n.</p>
+<table>
+<thead>
+<tr>
+<th>Tipos Primitivos</th>
+<th>Modificadores</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1B</strong> char</td>
+<td>short</td>
+</tr>
+<tr>
+<td><strong>4B</strong> int</td>
+<td>long</td>
+</tr>
+<tr>
+<td><strong>4B</strong> float</td>
+<td>unsigned</td>
+</tr>
+<tr>
+<td><strong>8B</strong> double</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>long: inteiro de 64 bits. (8B ou 12B)</li>
+</ul>
 
 
 
