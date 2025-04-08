@@ -16,7 +16,7 @@
     
     
       
-        <title>Projeto Físico de Banco de Dados Relacional - VSFGA</title>
+        <title>Introdução a complexidade e Big-O - VSFGA</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#projeto-fisico-de-banco-de-dados-relacional" class="md-skip">
+        <a href="#introducao-a-complexidade-e-big-o" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -103,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Projeto Físico de Banco de Dados Relacional
+              Introdução a complexidade e Big-O
             
           </span>
         </div>
@@ -229,7 +229,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../EDA1/ementa/" class="md-tabs__link">
+        <a href="../ementa/" class="md-tabs__link">
           
   
   2025.1
@@ -461,7 +461,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../EDA1/ementa/" class="md-nav__link">
+      <a href="../ementa/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -482,7 +482,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ementa/" class="md-nav__link">
+      <a href="../../SDB2/ementa/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -581,10 +581,124 @@
                   
 
 
-<h1 id="projeto-fisico-de-banco-de-dados-relacional">Projeto Físico de Banco de Dados Relacional</h1>
+<h1 id="introducao-a-complexidade-e-big-o">Introdução a complexidade e Big-O</h1>
+<p>Contar a quantidade de operações é difícil, as vezes, é até viável, a ideia é medir <u>ordem de grandeza</u> de quantiade de operações:</p>
 <ul>
-<li>Em breve...</li>
+<li><strong>Como o total de operações cresce ao longo que o tamanho cresce?</strong> Por meio da anotação assintótica.</li>
 </ul>
+<p>Dizemos que uma função <span class="arithmatex">\(f: \mathbb{N} \to \mathbb{N}\)</span> é <span class="arithmatex">\(O(g(n))\)</span>, com <span class="arithmatex">\(g: \mathbb{N} \to \mathbb{N}\)</span>. Se existem constantes <span class="arithmatex">\(C \in \mathbb{N}_0\)</span> tais que: </p>
+<div class="arithmatex">\[
+f(n) \leq c \cdot g(n), \quad \forall n \geq n_0
+\]</div>
+<h2 id="medidas-padrao">Medidas Padrão</h2>
+<ul>
+<li><span class="arithmatex">\(O(1)\)</span> : Constante</li>
+<li><span class="arithmatex">\(O(\log n)\)</span> : Logarítmico</li>
+<li><span class="arithmatex">\(O(n \log n)\)</span> : Linearítmico</li>
+<li><span class="arithmatex">\(O(n^2)\)</span> : Quadrático</li>
+<li><span class="arithmatex">\(O(n^k)\)</span> : K - Polinomial</li>
+<li><span class="arithmatex">\(O(k^n)\)</span> : Exponencial</li>
+<li><span class="arithmatex">\(O(n!)\)</span> : Fatorial</li>
+</ul>
+<p>Com isso, os problemas passasm a ser classificados de acordo com a complexidade do <strong>melhor algoritmo que o resolve</strong>.</p>
+<h2 id="casos-de-analise-de-complexidade">Casos de Análise de Complexidade</h2>
+<ul>
+<li>Acessar o i-ésimo elemento do vetor v:<ul>
+<li><span class="arithmatex">\(V[i] = O(1)\)</span></li>
+<li>Qual o endereço de memória ocupa v[i]?<ul>
+<li><span class="arithmatex">\(Endereço Base + 4 \times i\)</span></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Importante olhar para a iteração em sí:</p>
+<ul>
+<li>Complexidade: <span class="arithmatex">\(O(n)\)</span></li>
+</ul>
+<pre><code class="language-c">for(int i = 0; i &lt; n; i++){
+    /* O(1) */
+}
+</code></pre>
+<ul>
+<li>Complexidade: <span class="arithmatex">\(O(1)\)</span></li>
+</ul>
+<pre><code class="language-C">for(int i = 0; i &lt; 1000000; i++){
+    /* O(1) */
+}
+</code></pre>
+<ul>
+<li>Complexidade: <span class="arithmatex">\(O(n^2)\)</span></li>
+</ul>
+<pre><code class="language-C">for(int i = 0; i &lt; n; i++){
+    for(int j = 0; i &lt; n; i++){
+        /* O(1)*/
+    }
+}
+</code></pre>
+<ul>
+<li>Complexidade: <span class="arithmatex">\(O(n \times m)\)</span></li>
+</ul>
+<pre><code class="language-C">for(int i = 0; i &lt; n; i++){
+    for(int j = 0; j &lt; m; j++){
+        /* O(1) */
+    }
+}
+</code></pre>
+<ul>
+<li>Complexidade: <span class="arithmatex">\(O(n^2)\)</span></li>
+</ul>
+<pre><code class="language-C">for(int i = 0; i &lt; n; i++){
+    for(int j = 0; j &lt; i; j++){
+        /* O(1) */
+    }
+}
+</code></pre>
+<div class="arithmatex">\[
+S = (0 + n-1) \times \frac{n}{2} = \frac{1}{2} n^2 - \frac{1}{2} n
+\]</div>
+<h3 id="multiplicacao-de-matrizes">Multiplicação de matrizes</h3>
+<div class="arithmatex">\[
+C_{ij} = 2_{k=1}^m A_{ik} \cdot B_{kj}
+\]</div>
+<ul>
+<li>Complexidade: <span class="arithmatex">\(O(n \cdot m \cdot p)\)</span> </li>
+</ul>
+<pre><code class="language-C">for(int i = 0; i &lt; n; i++){
+    for(int j=0; j &lt; p; j++){
+        C[i][j] = 0;
+        for(int k = 0; k &lt; m; k++){
+            C[i][j] += A[i][k] * B[k][j];
+        }
+    }
+}
+</code></pre>
+<h2 id="regra-geral">Regra geral</h2>
+<p>A complexidade de um algoritmo é a soma das complexidades de seus blocos não aninhados. Nesse sentido, a complexidade sera aquela do <strong>bloco mais caro</strong>.</p>
+<ul>
+<li>
+<p>Ex.:
+    $$
+    O(n) + O(n^2) + O(n^3) = O(n + n^2 + n^3) = O(n^3)
+    $$</p>
+</li>
+<li>
+<p>Complexidade: <span class="arithmatex">\(O(\log n)\)</span></p>
+</li>
+</ul>
+<pre><code class="language-C">for(int i = 1; i &lt; n; i *= 2){
+    /* O(1) */
+}
+</code></pre>
+<ul>
+<li>Complexidade: <span class="arithmatex">\(O(n)\)</span></li>
+</ul>
+<pre><code class="language-C">for(int i = 0; i &gt; 0; i /= 2){
+    for(int j = 0; j &lt; i; j++){
+        /* O(1) */
+    }
+}
+</code></pre>
 
 
 
