@@ -1,0 +1,13 @@
+# Ementa de Estrutura de Dados 1
+
+1. [Introdução](intro.md)
+2. [Introdução à complexidade computacional e notação Big-O](bigO.md)
+3. Recursão
+4. Ponteiros e alocação dinâmica de memória
+5. Estuturas lineares: listas, filas e pilhas
+6. Algoritmos de busca
+7. Algoritmos de ordenação O(n)
+8. Algoritmos em árvores binária
+9. Organização de arquivos
+10. Aplicações
+
