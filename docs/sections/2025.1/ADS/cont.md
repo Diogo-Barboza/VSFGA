@@ -1,16 +1,18 @@
 # Contextualizando com Engenharia de Requisitos
 
-Tudo começa na E.R 
-![alt text](image.png)
+Tudo começa na E.R
+
+![alt text](../../../images/image.png)
 
 ## Desenho de Software
 
 - Núcleo técnico da engenharia de software.
 
 Basicamente, elementos do modelo de análise (Ex.: Casos de uso), fornecem insumos para criação dos modelos de especificações de projeto.
-![alt text](image-1.png)
 
-## Desenho de Software
+![alt text](../../../images/image-1.png)
+
+
 
 - Define o que é a solução (Arquitetônico)
 - Define como é a solução (Projeot Lógico). Como cada componente deve ser implementado.
@@ -29,7 +31,9 @@ Basicamente, elementos do modelo de análise (Ex.: Casos de uso), fornecem insum
     - Como ela ocorre?
     - **Mundo Computacional**
 
-## 5W2H
+## Artefatos de Software
+
+### 5W2H
 - What?
 - Why?
 - Who?
@@ -39,21 +43,21 @@ Basicamente, elementos do modelo de análise (Ex.: Casos de uso), fornecem insum
 - How much?
 
 Exemplo:
-![alt text](image-2.png)
+![alt text](../../../images/image-2.png)
 
 <br>
 
-## Rich Picture
+### Rich Picture
 - Diagrama Causa-Efeito
 - Ishikawa
 
-## Brainstorm
-![alt text](image-3.png)
+### Brainstorm
+![alt text](../../../images/image-3.png)
 
-## Glossário
+### Glossário
 - Ligado à Definição.
 
-## Léxico
+### Léxico
 - Definição + Ação
 - Verbo, Objeto, Estado
 
@@ -87,9 +91,9 @@ Estado | O que significa e quais ações levaram a esse estado | Identificar out
     - checklists
     - Questionários
 
-# Processos & Metodologias & Abordagens
+## Processos & Metodologias & Abordagens
 
-## RUP
+### RUP
 
 - É um processo, foi o primeiro de todos. Foco em equipes grandes, pois exige muita documentação.
 - Separado por disciplinas para desenvolvimento **COMPLETO** do software. Desde UX, Implementação, e gestão de risco.
@@ -103,7 +107,7 @@ Possui 4 fases, sendo elas:
 
 Sendo bem completo em todas as fases.
 
-## OpenUP
+### OpenUP
 
 Baseado no RUP, mas com uma pegada mais **ágil**, bem como os princípios do [Lean Inseption](https://caroli.org/en/lean-inception-4/).
 

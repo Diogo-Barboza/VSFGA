@@ -19,7 +19,10 @@ nav:
     - SDB2: sections/2025.1/SDB2/ementa.md
     - Testes de Software: sections/2025.1/Testes/ementa.md
     - IHC: sections/2025.1/IHC/ementa.md
-    - Arquitetura e Desenho de Software: sections/2025.1/ADS/ementa.md
+    - Arquitetura e Desenho de Software: 
+      - Ementa: sections/2025.1/ADS/ementa.md
+      - Contextualização: sections/2025.1/ADS/cont.md
+      - BPMN: sections/2025.1/ADS/bpmn.md
   - Treinos:
     - Início: sections/treino/treinoshome.md
     - Peito e Tríceps: sections/treino/A.md
