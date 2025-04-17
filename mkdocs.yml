@@ -12,7 +12,10 @@ nav:
     - EDA: sections/2024.2/EDA.md
     - FAC: sections/2024.2/FAC.md
   - 2025.1:
-    - EDA: sections/2025.1/EDA1/ementa.md
+    - EDA: 
+      - Ementa: sections/2025.1/EDA1/ementa.md
+      - BigO: sections/2025.1/EDA1/bigO.md
+      - Recursão: sections/2025.1/EDA1/recursao.md
     - SDB2: sections/2025.1/SDB2/ementa.md
     - Testes de Software: sections/2025.1/Testes/ementa.md
     - IHC: sections/2025.1/IHC/ementa.md
@@ -23,6 +26,8 @@ nav:
     - Costas e Bíceps: sections/treino/B.md
     - Perna Completo: sections/treino/C.md
     - Ombro, Trapézio e Abdômen: sections/treino/D.md
+  - HackaTruck:
+    - Conteúdo: sections/hackatruck/cursoEAD/conteudo.md
     
 theme:
   name: material
