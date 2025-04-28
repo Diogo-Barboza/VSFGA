@@ -45,4 +45,27 @@ Com isso, toda a variável possui um **endereço** que corresponde ao endereço 
 
 **Ponteiro** é uma classe de variáveis que armazenam **endereços de memória**. 
 
+### Exemplo:
+
+```C
+int x = 81;
+int *p; // * -> Na declaração indica que a variável é um ponteiro
+p = &x; // Operador unário & chama-se operador de endereçamento (endereço de ...)
+
+printf("x = %d\n", *p);
+// Lê-se Conteúdo de ...
+
+```
+
+#### O que aconteceu na memória neste exemplo?
+
+1. Alocação automática de X.
+2. Armazena 81 em x.
+3. Alocação automática de p.
+
+### **IMPORTANTE!**
+
+- O tipo de ponteiro não determina seu tamanho, mas sim qual o tamanho da memória que deve ser manipulada em caso de indireção.
+- Um ponteiro costuma ter 8 Bytes, mas varia de acordo com a arquitetura/S.O.
+
 
