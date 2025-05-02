@@ -18,7 +18,9 @@ nav:
       - Recursão: sections/2025.1/EDA1/recursao.md
       - Ponteiros: sections/2025.1/EDA1/ponteiro.md
     - SDB2: sections/2025.1/SDB2/ementa.md
-    - Testes de Software: sections/2025.1/Testes/ementa.md
+    - Testes de Software:
+      - Ementa: sections/2025.1/Testes/ementa.md
+      - Black Box: sections/2025.1/Testes/BlackBox.md
     - IHC: sections/2025.1/IHC/ementa.md
     - Arquitetura e Desenho de Software: 
       - Ementa: sections/2025.1/ADS/ementa.md
