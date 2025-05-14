@@ -49,3 +49,18 @@ Cada dia foi planejado para estimular os músculos de forma completa, com varia�
 
 ---
 
+# Gerador de Treino Personalizado
+
+<form id="treino-form">
+  <label><input type="checkbox" value="peito"> Peito</label><br>
+  <label><input type="checkbox" value="costas"> Costas</label><br>
+  <label><input type="checkbox" value="biceps"> Bíceps</label><br>
+  <label><input type="checkbox" value="triceps"> Tríceps</label><br>
+  <label><input type="checkbox" value="perna"> Perna</label><br>
+  <label><input type="checkbox" value="ombro"> Ombro</label><br><br>
+  <button type="button" onclick="gerarTreino()">Gerar Treino</button>
+</form>
+
+<div id="resultado-treino" style="margin-top: 20px;"></div>
+
+
