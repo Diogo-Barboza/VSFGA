@@ -1,23 +1,36 @@
-#include <stdio.h>
+# include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
-void moveX(char *v, int tamanho){
-    char aux;
+int proxNaoX(char *ent, int pos){
+    if (ent[pos] == '\0') return pos;
 
-    if (v[i] == 'x')
-    {
-        v[tamanho] = v[i];
+    if(ent[pos] != 'x') return pos;
+
+    return proxNaoX(ent, pos+1);
+}
+
+void moveX(char *ent, int pos){
+    if (ent[pos] == '\0') return;
+
+    if (ent[pos] == 'x'){
+        int j = proxNaoX(ent, pos + 1);
+        if (ent[j] == '\0') return;
+        char aux = ent[pos];
+        ent[pos] = ent[j];
+        ent[j] = aux;
     }
 
-    moveX(v, tamanho-1);
+    moveX(ent, pos+1);
 }
 
 int main(){
-    char ent[101];
+    char ent[100] = "";
 
-    scanf("%s", ent);
-    int tam = strlen(ent);
+    scanf("%100s", ent);
+    moveX(ent, 0);
 
-    moveX(ent, tam);
+    printf("%s\n", ent);
 
+    return 0;
 }
