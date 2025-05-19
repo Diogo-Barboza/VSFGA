@@ -14,7 +14,7 @@ int main(){
 
     int tam = strlen(string);
     
-    inverte(string, tam);
+    inverte(string, tam - 1);
     printf("\n");
 
     return 0;
