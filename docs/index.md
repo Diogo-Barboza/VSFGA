@@ -1,17 +1,11 @@
-# Welcome to MkLorum
+# Seja bem vindo a VSFGA! 👋
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+Olá! Se você chegou até aqui, provavelmente faz parte da família FGA e está buscando uma forma de organizar (ou encontrar!) os materiais da nossa jornada em Engenharia de Software.
 
-## Commands
+Este site, carinhosamente apelidado de VSFGA (você sabe porque...), nasceu de uma ideia simples: centralizar e organizar os materiais que acumulei ao longo dos semestres na Universidade de Brasília e como uma forma de revisar tudo digitando tudo para entender. Como estudante, sei o quanto é valioso ter um ponto de referência confiável para revisar conteúdos, entender conceitos e até mesmo ter um "norte" para o que está por vir. 🧭
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+Fluxograma do meu semestre:
 
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+<iframe src="images/fluxo_software.pdf" width="130%" height="800px">
+    <p>Seu navegador não suporta iframes. Você pode <a href="images/fluxo_software.pdf">clicar aqui para baixar o PDF</a>.</p>
+</iframe>
