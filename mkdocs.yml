@@ -17,7 +17,8 @@ nav:
       - BigO: sections/2025.1/EDA1/bigO.md
       - Recursão: sections/2025.1/EDA1/recursao.md
       - Ponteiros: sections/2025.1/EDA1/ponteiro.md
-      - Busca: sections/2025.1/EDA1/busca.md
+      - Algoritmos de Busca: sections/2025.1/EDA1/busca.md
+      - Algoritmos de Ordenação: sections/2025.1/EDA1/ordenacao.md
     - SDB2: sections/2025.1/SDB2/ementa.md
     - Testes de Software:
       - Ementa: sections/2025.1/Testes/ementa.md
