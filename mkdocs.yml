@@ -19,6 +19,7 @@ nav:
       - Ponteiros: sections/2025.1/EDA1/ponteiro.md
       - Algoritmos de Busca: sections/2025.1/EDA1/busca.md
       - Algoritmos de Ordenação: sections/2025.1/EDA1/ordenacao.md
+      - Lista, Fila e Pilha: sections/2025.1/EDA1/estruturasLineares.md
     - SDB2: sections/2025.1/SDB2/ementa.md
     - Testes de Software:
       - Ementa: sections/2025.1/Testes/ementa.md
