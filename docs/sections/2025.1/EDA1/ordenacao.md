@@ -216,3 +216,53 @@ $$
 
 Isso pode ser muito eficiente para ordenar apenas uma parte do vetor.
 
+## Algoritmo de ordenações Lineares
+
+### 1. Contagem
+
+<u>Premissa:</u> O conjunto a ser ordenado possui apenas números <u>inteiros</u> no intervalo [a,b], com $a,b \in \mathbb{Z}$. <br>
+<u>Lógica:</u> Usando um vetor auxiliar de tamanho $|b - a| + 1$, conto a ocorrência de cada elemento no vetor e, ao final, exibo os elementos em ordem.
+
+Ex.: 
+
+| 0 | 1 | 2 | 3 | 4 | 5 | 6 |
+|--|----|----|---|--|---|---|
+|-3|0|4|-1|-5|5|3|
+
+Nesse caso:
+
+> a = -5, b = 5, Logo |b-a| + 1 = 11
+
+O vetor auxiliar:
+
+| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
+|--|----|----|---|--|---|---|---|---|---|----|
+|1|0|1|0|1|1|0|0|1|1|1|
+
+Na hora de printar: 
+
+| 0 | 1 | 2 | 3 | 4 | 5 | 6 |
+|--|----|----|---|--|---|---|
+|-5|-3|-1|0|3|4|5|
+
+#### Algoritmo
+
+```c
+void contagem(int *v, int n, int a, int b){
+    int tam = b - a;
+    if(tam < 0) tam -= tam;
+    int *aux = calloc(tam + 1, sizeof(int));
+    for(int i = 0; i < n; i++) aux[v[i] - a];
+    for(int i=0, j=0; i<=tam; i++){ // *
+        while(aux[i] > 0){
+            v[j] = i + a; j++; aux--; //**
+        }
+    }
+    free(aux); 
+} //COMPLEXIDADE: O(|b-a| + 1)
+```
+
+> Esse código compensa quando |b-a| + 1 for $O(n)$.
+
+Todavia o laço(*) é muito rápido, pois (**) só é feito n vezes. Logo, se há possibilidade de arcar com o custo de mamória o algoritmo é interessante.
+
