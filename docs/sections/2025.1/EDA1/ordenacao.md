@@ -13,9 +13,9 @@ Ex.:
 | 3 | -1 | 7 | 2 | 4 |
 
 ```c
-void insertion()int *v, int n){
+void insertion(int *v, int n){
     for(int i = 1; i < n; i++){
-        for(int j = i + 1; j >= && v[j] > v[j+1], j--){
+        for(int j = i + 1; j >= 0 && v[j] > v[j+1], j--){
             troca(&v[j], &v[j + 1]);
         }
     }
