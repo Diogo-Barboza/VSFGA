@@ -1463,9 +1463,9 @@
 </tr>
 </tbody>
 </table>
-<pre><code class="language-c">void insertion()int *v, int n){
+<pre><code class="language-c">void insertion(int *v, int n){
     for(int i = 1; i &lt; n; i++){
-        for(int j = i + 1; j &gt;= &amp;&amp; v[j] &gt; v[j+1], j--){
+        for(int j = i + 1; j &gt;= 0 &amp;&amp; v[j] &gt; v[j+1], j--){
             troca(&amp;v[j], &amp;v[j + 1]);
         }
     }
