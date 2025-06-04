@@ -7,15 +7,13 @@ void troca(int *a, int *b){
 }
 
 void insertion(int *v, int n){
-    for(int i = 0; i < n; i++){
-        for (int j = (i + 1); j >= 0 && v[j] > v[j + 1]; j--)
+    for(int i = 1; i < n; i++){
+        for (int j = i; j > 0 && v[j] < v[j-1]; j--)
         {
-            troca(&v[j], &v[j + 1]);
+            troca(&v[j], &v[j-1]);
         }
     }
 }
-
-
 
 int main(){
     int v[1000], i = 0, j = 0;

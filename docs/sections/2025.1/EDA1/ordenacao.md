@@ -15,8 +15,9 @@ Ex.:
 ```c
 void insertion(int *v, int n){
     for(int i = 1; i < n; i++){
-        for(int j = i + 1; j >= 0 && v[j] > v[j+1], j--){
-            troca(&v[j], &v[j + 1]);
+        for (int j = i; j > 0 && v[j] < v[j-1]; j--)
+        {
+            troca(&v[j], &v[j-1]);
         }
     }
 }
@@ -38,7 +39,7 @@ Ex.:
 
 ```c
 void selection(int *v, int n){
-    for(int i = 0; i < n-1, i++){
+    for(int i = 0; i < n, i++){
         int menor = 1;
         for(int j = i + 1; j < n; j++)
             if(v[j] < v[menor]) menor = j;
