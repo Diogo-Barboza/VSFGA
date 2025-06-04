@@ -28,7 +28,7 @@ x = 15
 1ª e = -1; m=(e+d)/2; d=n=8
 
 ```c
-int buscaBinaria(int *v, int m, int x){
+int buscaBinaria(int *v, int n, int x){
     int e = -1, d = n;
     while(e < d-1){
         int m = (e + d) / 2;

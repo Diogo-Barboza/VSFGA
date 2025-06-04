@@ -6,21 +6,23 @@ void troca(int *a, int *b){
     *b = temp;
 }
 
+void insere(int *v, int j, int ultimo){
+    if (j < 0 || v[j] <= ultimo) {
+        v[j + 1] = ultimo;
+        return;
+    }
+
+    v[j + 1] = v[j];
+    insere(v, j - 1, ultimo); 
+}
+
 void ordena(int *v, int n){
     if (n <= 1) return;
-    
-}
 
-void insertion(int *v, int n){
-    for (int i = 1; i < n; i++){
-        for (int j = i; j > 0 && v[j] < v[j-1] ; j--)
-        {
-            troca(&v[j], &v[j-1]);
-        }
-    }
-}
+    ordena(v, n-1);
 
-int main(){
+    int ultimo = v[n-1];
+    int j = n - 2;
 
-    return 0;
+    insere(v, j, ultimo);
 }
