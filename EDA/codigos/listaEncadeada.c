@@ -34,7 +34,7 @@ void insere(celula *le, int x){
     le -> prox = novo;
 }
 
-int remove(celula *ptr){ // NAO TESTADA AINDA...
+int removelista(celula *ptr){ 
     celula *lixo = ptr -> prox;
     int x = ptr -> dado;
     ptr -> prox = lixo -> prox;
@@ -71,6 +71,8 @@ int main(){
     } else {
         printf("Could not find the value %d in the list.\n", 43);
     }
+
+    printf("%d\n", removelista(le));
 
 
     return 0;

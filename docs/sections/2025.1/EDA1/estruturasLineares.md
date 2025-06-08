@@ -33,11 +33,26 @@ celula *cria_lista(){
 
 #### Busca
 
+##### Busca Iterativa
+
 ```c
 celula *busca(celula *le, int x){
-    for(celula *prog; ptr != NULL; ptr = ptr -> prox)
+    for(celula *ptr = le; ptr != NULL; ptr = ptr -> prox)
         if(ptr -> dado == x) return ptr;
-        return NULL;
+    return NULL;
+}
+```
+
+Fazendo alguns exercícios do MOJ, surgiu uma questão de implementar uma função de busca de forma recursiva. Dessa forma:
+
+##### Busca Recursiva
+
+```c
+celula *busca_rec(celula *le, int x){
+    if (le == NULL) return NULL;
+    if ( le -> prox == x) return le;
+
+    return busca_rec(le->prox, x);
 }
 ```
 
