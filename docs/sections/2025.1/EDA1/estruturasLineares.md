@@ -74,9 +74,11 @@ Para inserir no começo, basta chamar <u>insere</u> com le. Para inserir depois 
 ```c
 int remove(celula *ptr){
     celula *lixo = ptr -> prox;
+    celula *proxNo = lixo -> prox;
     int x = lixo -> dado;
-    ptr -> prox = lixo -> prox;
-    free(ptr);
+    ptr -> prox = proxNo;
+    
+    free(lixo);
     return x;
 }
 ```
@@ -86,6 +88,26 @@ int remove(celula *ptr){
 Agora para exercitar, pense: 
 
 - Como remover um elemento y?
+
+    - Estive estudando, e o princípio é. Temos que saber a celula anterior a que queremos saber, e fazer essa anterior apontar para a que ela aponta. Dessa forma:
+
+    ```c
+    int removeItem(celula *le, int x){
+        for ( celula *atual = le; atual != NULL; atual = atual -> prox){
+            if ( atual -> prox -> dado == x){
+                celula *to_remove = atual -> prox;
+
+                atual -> prox = to_remove -> prox;
+
+                free(to_remove);
+
+                return 1;
+            }
+        }
+        return 0; // 0 se n econtrou
+    }
+    ```
+
 - Como remover o último elemento da lista?
 
 #### Destroi lista
@@ -97,4 +119,6 @@ void destroi_lista(celula *le){
     free(le);
 } // COMPLEXIDADE: O(n)
 ```
+
+
 

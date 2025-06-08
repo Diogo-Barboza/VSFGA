@@ -14,6 +14,13 @@ celula *cria_lista(){
     return le;
 }
 
+void insere(celula *le, int x){
+    celula *novo = malloc(sizeof(celula));
+    novo -> dado = x;
+    novo -> prox = le -> prox;
+    le -> prox = novo;
+}
+
 celula *busca(celula *le, int x){ //Busca Iterativa
     for (celula *ptr = le; ptr != NULL; ptr = ptr -> prox){
         if(ptr -> dado == x) return ptr;
@@ -27,14 +34,8 @@ celula *busca_rec (celula *le, int x){ // Busca recursiva
     return busca_rec(le -> prox, x);
 }
 
-void insere(celula *le, int x){
-    celula *novo = malloc(sizeof(celula));
-    novo -> dado = x;
-    novo -> prox = le -> prox;
-    le -> prox = novo;
-}
 
-int removelista(celula *ptr){ // Corrigida
+int removelista(celula *ptr){ // remove head
     celula *lixo = ptr -> prox;
     celula *proxNo = lixo -> prox;
     int x = lixo -> dado;
@@ -42,6 +43,21 @@ int removelista(celula *ptr){ // Corrigida
     
     free(lixo);
     return x;
+}
+
+int removeItem(celula *le, int x){
+    for ( celula *atual = le; atual != NULL; atual = atual -> prox){
+        if ( atual -> prox -> dado == x){
+            celula *to_remove = atual -> prox;
+
+            atual -> prox = to_remove -> prox;
+
+            free(to_remove);
+
+            return 1;
+        }
+    }
+    return 0; // 0 se n econtrou
 }
 
 
@@ -67,13 +83,20 @@ void imprime_rec(celula *le){
     recursiva(le->prox);
 }
 
+void destroi_lista(celula *le){
+    while(le -> prox != NULL){
+        removelista(le);
+    }
+    free(le);
+}
+
 int main(){
     celula *le = cria_lista();
 
     insere(le, 1);
     insere(le, 2);
     insere(le, 43);
-    insere(le,90);
+    insere(le, 90);
     insere(le, 100);
     insere(le, 110);
 
@@ -81,9 +104,9 @@ int main(){
 
     imprime_rec(le); // Comecar depois do no Cabeca
 
-    celula *buscaNormal = busca(le->prox, 90); // Quero eliminar essa cel
+    celula *buscaNormal = busca(le->prox, 90); // cell exitente
 
-    celula *buscaRecusiva = busca_rec(le->prox, 43);
+    celula *buscaRecusiva = busca_rec(le, 3); // Cell que nao existe
 
     if(buscaNormal != NULL){
         printf("Achei o valor %d na lista!\n", buscaNormal->dado);
@@ -91,9 +114,23 @@ int main(){
         printf("Nao foi encontrado o valor %d na lista.\n", buscaNormal->dado);
     }
 
-    printf("%d\n", removelista(le)); // remove o primeiro nó
+    if(buscaRecusiva != NULL){
+        printf("Achei o valor %d na lista\n", buscaRecusiva->dado);
+    }else{
+        printf("Nao achei o valor %d na lista\n", 3);
+    }
 
-    imprime_rec(le);    
+    printf("A primeira celula de valor %d foi removida\n", removelista(le)); // remove o primeiro nó
+
+    imprime_rec(le);
+
+    printf("Testando remover um elemento y = 43\n");
+    
+    removeItem(le, 43);
+
+    imprime(le);
+
+    destroi_lista(le);
 
     return 0;
 }
