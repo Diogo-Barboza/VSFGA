@@ -1399,9 +1399,11 @@
 <h4 id="remocao">Remoção</h4>
 <pre><code class="language-c">int remove(celula *ptr){
     celula *lixo = ptr -&gt; prox;
+    celula *proxNo = lixo -&gt; prox;
     int x = lixo -&gt; dado;
-    ptr -&gt; prox = lixo -&gt; prox;
-    free(ptr);
+    ptr -&gt; prox = proxNo;
+
+    free(lixo);
     return x;
 }
 </code></pre>
@@ -1410,8 +1412,31 @@
 </blockquote>
 <p>Agora para exercitar, pense: </p>
 <ul>
-<li>Como remover um elemento y?</li>
-<li>Como remover o último elemento da lista?</li>
+<li>
+<p>Como remover um elemento y?</p>
+<ul>
+<li>Estive estudando, e o princípio é. Temos que saber a celula anterior a que queremos saber, e fazer essa anterior apontar para a que ela aponta. Dessa forma:</li>
+</ul>
+<p>```c
+int removeItem(celula <em>le, int x){
+    for ( celula </em>atual = le; atual != NULL; atual = atual -&gt; prox){
+        if ( atual -&gt; prox -&gt; dado == x){
+            celula *to_remove = atual -&gt; prox;</p>
+<pre><code>        atual -&gt; prox = to_remove -&gt; prox;
+
+        free(to_remove);
+
+        return 1;
+    }
+}
+return 0; // 0 se n econtrou
+</code></pre>
+<p>}
+```</p>
+</li>
+<li>
+<p>Como remover o último elemento da lista?</p>
+</li>
 </ul>
 <h4 id="destroi-lista">Destroi lista</h4>
 <pre><code class="language-c">void destroi_lista(celula *le){
