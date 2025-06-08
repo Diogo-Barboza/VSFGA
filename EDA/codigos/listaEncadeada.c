@@ -34,20 +34,37 @@ void insere(celula *le, int x){
     le -> prox = novo;
 }
 
-int removelista(celula *ptr){ 
+int removelista(celula *ptr){ // Corrigida
     celula *lixo = ptr -> prox;
-    int x = ptr -> dado;
-    ptr -> prox = lixo -> prox;
-    free(ptr);
+    celula *proxNo = lixo -> prox;
+    int x = lixo -> dado;
+    ptr -> prox = proxNo;
+    
+    free(lixo);
     return x;
 }
 
+
 void imprime(celula *le){
-    printf("Lista: -> ");
     for (celula *ptr = le -> prox; ptr != NULL; ptr = ptr -> prox){
         printf("%d -> ", ptr -> dado);
     }
     printf("NULL\n");
+}
+
+void recursiva (celula *le){ 
+    if (le == NULL) {
+        printf("NULL\n");
+        return;
+    }
+    else {
+        printf("%d -> ", le->dado);
+    }
+    recursiva(le->prox);
+}
+
+void imprime_rec(celula *le){
+    recursiva(le->prox);
 }
 
 int main(){
@@ -62,18 +79,21 @@ int main(){
 
     imprime(le);
 
-    celula *buscaNormal = busca(le->prox, 43);
+    imprime_rec(le); // Comecar depois do no Cabeca
+
+    celula *buscaNormal = busca(le->prox, 90); // Quero eliminar essa cel
 
     celula *buscaRecusiva = busca_rec(le->prox, 43);
 
     if(buscaNormal != NULL){
-        printf("Found the value %d in the list!\n", buscaNormal->dado);
+        printf("Achei o valor %d na lista!\n", buscaNormal->dado);
     } else {
-        printf("Could not find the value %d in the list.\n", 43);
+        printf("Nao foi encontrado o valor %d na lista.\n", buscaNormal->dado);
     }
 
-    printf("%d\n", removelista(le));
+    printf("%d\n", removelista(le)); // remove o primeiro nó
 
+    imprime_rec(le);    
 
     return 0;
 }
