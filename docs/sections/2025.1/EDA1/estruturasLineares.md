@@ -109,6 +109,23 @@ Agora para exercitar, pense:
     ```
 
 - Como remover o último elemento da lista?
+    - Podemos seguir do mesmo jeito, achamos o último elemento que aponta para NULL, pegamos o antecessor e apontamos para NULL;
+    ```c
+    int removeUltimo(celula *le){
+        if(le -> prox == NULL) return 0; 
+
+        for (celula *atual = le; atual != NULL; atual = atual -> prox){
+            if ( atual -> prox -> prox == NULL) {
+                free(atual->prox);
+                atual -> prox = NULL;
+                return 1;
+            }
+        }
+        return 0;
+    }
+    ```
+
+
 
 #### Destroi lista
 

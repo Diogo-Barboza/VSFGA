@@ -60,6 +60,19 @@ int removeItem(celula *le, int x){
     return 0; // 0 se n econtrou
 }
 
+int removeUltimo(celula *le){
+    if(le -> prox == NULL) return 0; 
+
+    for (celula *atual = le; atual != NULL; atual = atual -> prox){
+        if ( atual -> prox -> prox == NULL) {
+            free(atual->prox);
+            atual -> prox = NULL;
+            return 1;
+        }
+    }
+    return 0;
+}
+
 
 void imprime(celula *le){
     for (celula *ptr = le -> prox; ptr != NULL; ptr = ptr -> prox){
@@ -125,10 +138,12 @@ int main(){
     imprime_rec(le);
 
     printf("Testando remover um elemento y = 43\n");
-    
     removeItem(le, 43);
-
     imprime(le);
+
+    printf("Testando remover o último elemento\n");
+    removeUltimo(le);
+    imprime_rec(le);
 
     destroi_lista(le);
 
