@@ -57,6 +57,8 @@ int main(){
          32,  -53,   70,   -26,   47,  -99,   22,   64,   -14,   56
     };
 
+    int tam = sizeof(num) / sizeof(num[0]);
+
     // insertion(num, 100);
 
     // for (int i = 0; i < 5; i++)
@@ -68,9 +70,9 @@ int main(){
 
     // int num[] = {3, -1, 7, 2, 4}; 
 
-    quickSort(num, 0, 99);
+    quickSort(num, 0, tam-1);
 
-    for (int i = 0; i < 99; i++)
+    for (int i = 0; i < tam; i++)
     {
         printf("%d ", num[i]);
     }
