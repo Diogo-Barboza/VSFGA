@@ -207,3 +207,56 @@ pilha *cria_pilha(int tam){
     }
 
 ```
+
+## Fila
+
+São estruturas do tipo **FIFO (First-In-First-Out)**. Tem dois jeitos de fazer uma fila, usando:
+
+- Vetores 
+- Lista encadeada
+
+### Por meio de vetores
+
+Vou mostrar a implementacao via vetor, mas o indicado é sempre por lista esncadeada para nao se preocupar com redimensionamento.
+
+```c
+type def struct{
+    int *dado;
+    int s, e; // start e end
+    int n; // tamanho
+}
+```
+ 
+#### Criar fila
+
+```c
+fila *cria_fila(int tam){
+    fila *f = malloc(sizeof(fila));
+    f -> dado = malloc(tam * sizeof(int));
+    f -> s = f -> = 0;
+    f -> n = tam;
+    return f;
+}
+```
+
+#### Insere na Fila
+
+```c
+int enfileira(fila *f, int x){
+    if ((f -> e+1)%f -> n == f -> s) if (redimensiona(f)) return 1;
+    f -> dado[f -> e] = x; f -> e++;
+
+    return 0; // deu certo
+}
+```
+
+#### Remove da Fila
+
+```c
+int desenfileira(fila *f, int *y){
+    if (f -> e == f -> s) return 1; // vazia
+    *y = f -> dado[f -> s];
+    f -> s++;
+    return 0; // deu certo
+}
+```
