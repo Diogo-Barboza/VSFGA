@@ -137,5 +137,73 @@ void destroi_lista(celula *le){
 } // COMPLEXIDADE: O(n)
 ```
 
+## Pilhas
 
+São estruturas do tipo **LIFO (Last-In-Fist-Out)**. Tem dois jeitos de fazer uma pilha, usando:
 
+- Vetores
+- Listas Encadeadas
+
+Usando listas encadeadas é praticamente a mesma forma de implementar uma lista. Então vou implementar uma usando vetores.
+
+### Pilhas com Vetores
+
+```c
+type def struct {
+    int *dado;
+    int n; // tamanho
+    int topo;
+}pilha
+```
+
+#### Criacao da pilha
+
+```c
+pilha *cria_pilha(int tam){
+    pilha *p = malloc(sizeof(pilha));
+    p -> dado = malloc(tam * sizeof(int));
+    p -> n = tam;
+    p -> topo = 0;
+    return p;
+}
+```
+
+#### Empilha
+
+```c
+
+    int empilha(pilha *p, int x){
+        if(p -> topo == p -> n){
+            p -> dado = realloc(p -> dado, 2 * p -> tam * sizeof(int));
+            if(p -> dado == NULL) return 1; // Estouro
+            p -> n *= 2;
+        }
+        p -> dado[p -> topo++] = x;
+        return 0; // bem sucedido
+    } // O(1)
+
+```
+
+#### Desempilha
+
+```c
+
+    int desempilha(pilha *p, int *y){
+        if(p -> topo == 0) return 1; //erro
+        p -> topo--;
+        *y = p -> dado[p -> topo];
+        return 0;
+    } O(1)
+
+```
+
+#### Destroi pilha
+
+```c
+
+    void destroi_pilha(pilha *p){
+        free(p->dado);
+        free(p);
+    }
+
+```
