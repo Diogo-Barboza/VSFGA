@@ -217,7 +217,7 @@ São estruturas do tipo **FIFO (First-In-First-Out)**. Tem dois jeitos de fazer 
 
 ### Por meio de vetores
 
-Vou mostrar a implementacao via vetor, mas o indicado é sempre por lista esncadeada para nao se preocupar com redimensionamento.
+Vou mostrar a implementação via vetor, mas o indicado é sempre por lista encadeada para não se preocupar com redimensionamento. Utilizando o conceito de fila circular, para não ficar tão simples.
 
 ```c
 type def struct{
@@ -244,7 +244,8 @@ fila *cria_fila(int tam){
 ```c
 int enfileira(fila *f, int x){
     if ((f -> e+1)%f -> n == f -> s) if (redimensiona(f)) return 1;
-    f -> dado[f -> e] = x; f -> e++;
+    f -> dado[f -> e] = x;
+    f -> e = (f -> e+1) % f -> n;
 
     return 0; // deu certo
 }
@@ -256,7 +257,7 @@ int enfileira(fila *f, int x){
 int desenfileira(fila *f, int *y){
     if (f -> e == f -> s) return 1; // vazia
     *y = f -> dado[f -> s];
-    f -> s++;
+    f -> s = (f -> s+1) % f -> n;
     return 0; // deu certo
 }
 ```
