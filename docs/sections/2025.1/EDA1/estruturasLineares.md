@@ -261,3 +261,75 @@ int desenfileira(fila *f, int *y){
     return 0; // deu certo
 }
 ```
+
+### Por meio de Lista Encadeada Circular
+
+#### Definições 
+
+```c
+typedef struct celula {
+    int dado;
+    struct celula *prox;
+}fila;
+```
+
+#### Criar fila
+
+```c
+fila *cria_fila(){
+    fila *f = malloc(sizeof(fila));
+    
+    f -> prox = f; 
+    
+    return f;
+}
+```
+#### Enfileira
+
+```c
+int enfileira(fila **f, int x){
+    fila *novo = malloc(sizeof(fila));
+    novo -> prox = *f -> prox;
+    *f -> prox = novo;
+    *f -> dado = x;
+    *f = novo;
+    return 0;
+}
+```
+
+Ou, retornaremos um ponteiro
+
+```c
+fila *enfileira(fila *f, int x){
+    fila *novo = malloc(sizeof(fila));
+    novo -> prox = f -> prox;
+    f -> prox = novo;
+    f -> dado = x;
+    return novo;  
+}
+// Na main, teria que fazer o no cabeça mudar
+// fila *f = cria_fila():
+// f = enfileira(f, 10);
+```
+
+#### Desinfileira
+
+```c
+int desinfileira(fila *f, int *y){
+    if (f -> prox == f) return 1;
+    *y = f -> prox -> dado;
+    fila *lixo = f-> prox;
+    f -> prox = lixo -> prox;
+    
+    free(lixo);
+    return 0;
+}
+```
+
+#### Destrói fila
+
+```c
+void destroi_fila(fila *f){
+    
+}
+```
