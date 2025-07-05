@@ -144,7 +144,6 @@ int main(){
     printf("Testando remover o último elemento\n");
     removeUltimo(le);
     imprime_rec(le);
-
     destroi_lista(le);
 
     return 0;
