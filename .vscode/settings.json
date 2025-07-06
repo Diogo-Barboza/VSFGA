@@ -4,6 +4,7 @@
         "string": "cpp",
         "vector": "cpp",
         "ostream": "cpp",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "stdlib.h": "c"
     }
 }
