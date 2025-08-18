@@ -20,23 +20,24 @@ nav:
       - Algoritmos de Busca: sections/2025.1/EDA1/busca.md
       - Algoritmos de Ordenação: sections/2025.1/EDA1/ordenacao.md
       - Lista, Fila e Pilha: sections/2025.1/EDA1/estruturasLineares.md
-    - SDB2: sections/2025.1/SDB2/ementa.md
     - Testes de Software:
       - Ementa: sections/2025.1/Testes/ementa.md
       - Black Box: sections/2025.1/Testes/BlackBox.md
-    - IHC: sections/2025.1/IHC/ementa.md
     - Arquitetura e Desenho de Software: 
       - Ementa: sections/2025.1/ADS/ementa.md
       - Contextualização: sections/2025.1/ADS/cont.md
       - BPMN: sections/2025.1/ADS/bpmn.md
+  - 2025.2:
+    - Projeto de Algoritmos:
+      - Plano de Ensino: sections/2025.2/PALG/planoEnsino.md
+    - Fundamentos de Sistemas Operacionais:
+      - Plano de ensino: sections/2025.2/FSO/planoEnsino.md
   - Treinos:
     - Início: sections/treino/treinoshome.md
     - Peito e Tríceps: sections/treino/A.md
     - Costas e Bíceps: sections/treino/B.md
     - Perna Completo: sections/treino/C.md
     - Ombro, Trapézio e Abdômen: sections/treino/D.md
-  - HackaTruck:
-    - Conteúdo: sections/hackatruck/cursoEAD/conteudo.md
     
 theme:
   name: material
@@ -79,7 +80,6 @@ markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
   - markdown.extensions.attr_list
-
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
   - javascripts/gerador.js

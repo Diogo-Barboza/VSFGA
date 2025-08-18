@@ -30,3 +30,24 @@ int desempilha (celula *p, int *y){
     return 1;
 
 }
+
+void imprime(celula *p){
+    for (celula *ptr = p -> prox; ptr != NULL; ptr = ptr -> prox){
+        printf("%d -> ", ptr -> dado);
+    }
+    printf("NULL\n");
+}
+
+void imprime(celula *p){
+    if (p == NULL){
+        printf("NULL\n");
+        return;
+    }else{
+        printf("%d -> ", p->dado);
+    }
+    imprime(p -> prox);
+}
+
+void imprime_rec(celula *p){
+    imprime(p -> prox);
+}
