@@ -30,6 +30,8 @@ nav:
   - 2025.2:
     - Projeto de Algoritmos:
       - Plano de Ensino: sections/2025.2/PALG/planoEnsino.md
+    - Estruturas de Dados 2025.2:
+      - Plano de Ensino: sections/2025.2/EDA2/planoEnsino.md
     - Fundamentos de Sistemas Operacionais:
       - Plano de ensino: sections/2025.2/FSO/planoEnsino.md
   - Treinos:
