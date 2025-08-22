@@ -34,7 +34,7 @@ nav:
       - Plano de Ensino: sections/2025.2/EDA2/planoEnsino.md
     - Fundamentos de Sistemas Operacionais:
       - Plano de ensino: sections/2025.2/FSO/planoEnsino.md
-      - Conceitos Iniciais: sections/2025.2/FSO/conceitosIniciais.md
+      - Conceitos Iniciais - Módulo 1: sections/2025.2/FSO/conceitosIniciais.md
   - Treinos:
     - Início: sections/treino/treinoshome.md
     - Peito e Tríceps: sections/treino/A.md
