@@ -1374,6 +1374,66 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#escalonamento-de-processos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Escalonamento de Processos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Escalonamento de Processos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#first-come-first-served" class="md-nav__link">
+    <span class="md-ellipsis">
+      First Come First Served
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#round-robin-alternancia-circular-cada-um-vai-usar-um-pouco" class="md-nav__link">
+    <span class="md-ellipsis">
+      Round-Robin: Alternância circular, cada um vai usar um pouco
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prioridades" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prioridades
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shortest-job-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      Shortest Job First
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#escalonamento-em-dois-niveis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Escalonamento em dois níveis
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1674,6 +1734,95 @@
 <h2 id="implementacao-de-processos">Implementação de processos</h2>
 <h2 id="-troca-de-contexto-operacao-basica-da-multiprogramacao-e-uma-operacao-de-salvamento-dos-registradores-de-um-processo-para-posteriormente-restaurar-esses-regsitradroes-para-que-esse-processo-continue-a-execucao-como-se-nao-tivesse-parado">- <strong>TROCA DE CONTEXTO</strong> : Operação básica da multiprogramação, é uma operação de salvamento dos registradores de um processo, para posteriormente restaurar esses regsitradroes, para que esse processo continue a execução como se não tivesse parado</h2>
 <p><img alt="alt text" src="../../../../images/interrupcao.png" /></p>
+<h2 id="escalonamento-de-processos">Escalonamento de Processos</h2>
+<p>O algortimo de escalonameto é o que vai definir qual processo vai rodar e por quanto tempo.</p>
+<ul>
+<li>A parte do S.O que faz isso é chamado de escalonador</li>
+</ul>
+<p><img alt="Escalonador de processos" src="../../../../images/processosEscalonador.png" /></p>
+<p>Daí surge a multiprogramação. Os escalonadores podem ser classificados em:</p>
+<p><strong>Preemptivos</strong>: Quando faz a suspensão temporaria de um processo, quando possui a capacidade de tirar a força da CPU. <br/>
+<strong>Não-Preemptivos</strong>:  Quando o processo chega a CPU, ele executa até o fim, não possui a capacidade de tirar a força da CPU. <br/></p>
+<ul>
+<li>Cada processo possui um tempo limitado no processador (time-slice)</li>
+<li>Os escalonadores não-preemptivos são de projetos mais simples, não confiáveis pois podem abusar do tempo limite da CPU. Isso viola bons critérios de um bom escalonador, justiça, tempo, etc.</li>
+<li>Escalonadores preemptivos asseguram um uso mais balanceado da CPU, por isso, são usados em maioria pelos S.O.</li>
+<li>Tais projetos podem possuir deficiência em processos concorrentes, devido a complexidade.</li>
+</ul>
+<p>Ao projetar um escalonador deve-se levar em consideração:</p>
+<ul>
+<li><strong>Justiça</strong>: Um bom escalondaro deve ser justo, todos os processos devem ter uma chance justa de usar o processador</li>
+<li><strong>Eficiência</strong>: Quando houver um trabalho a fazer o processador deve estar ocupado</li>
+<li><strong>Minimizar o tempo de resposta</strong>: Reduzir o tempo dos usuários interativos, quando se há diferente tipos de processos rodando na máquina.</li>
+<li><strong>Minimizar o turnaround</strong>: Reduzir o tempo de processo até o seu término. Soma de tempo de espera por recursos.</li>
+<li><strong>Minimizar tempo de espera</strong>: Visa minimizar o tempo de esepra pela CPU</li>
+<li><strong>Maximisar throughtput</strong>: Maximizar o número de tarefas executadas por uma unidade de tempo</li>
+</ul>
+<p>Não é possível atingir todos esses critérios com maestria em um algoritmo, é necessário uma lista de prioridade.</p>
+<ul>
+<li>Algoritmos clássicos de escalonamento:<ul>
+<li>Fist Come First Server</li>
+<li>Round-Robin: Alternância circular, cada um vai usar um pouco</li>
+<li>Prioridades</li>
+<li>Shortest Job First</li>
+</ul>
+</li>
+</ul>
+<h3 id="first-come-first-served">First Come First Served</h3>
+<p>O processo obtido pela CPU de acordo com a ordem de chegada, é do tipo <strong>não-preemptivos</strong>, assim o processo obtem a CPU por um tempo inderteminado. </p>
+<ul>
+<li>Vantagens: <ul>
+<li>Simples de implementar</li>
+<li>Algoritmo eficiente, CPU sempre utilizada</li>
+</ul>
+</li>
+<li>
+<p>Desvantagens:</p>
+<ul>
+<li>Impossiblidade de prever quando um processo vai iniciar</li>
+<li>Tempo médio de processo não é respeitado</li>
+<li>Tempo de espera = Tempo de serviço - Tempo de chegada</li>
+</ul>
+</li>
+<li>
+<p>Justiça: Não. Um processo pode monopolizar</p>
+</li>
+<li>Eficiência: OK. A CPU sempre é utilizada, se existe trabalho</li>
+<li>Minimizar o tempo de resposta: Não. Caso um processo monopolize</li>
+<li>Minimizar o turnaround: Tarefas longas sendo executadas primeiro, aumenta turnaround (Ver exemplo do SJF a frente)</li>
+<li>Minimizar waiting time: O tempo de espera não é considerado durante o escalonamento</li>
+<li>Maximizar throughtput: Se a primeira tarefa for longa, o tempo de término fica alta</li>
+</ul>
+<h3 id="round-robin-alternancia-circular-cada-um-vai-usar-um-pouco">Round-Robin: Alternância circular, cada um vai usar um pouco</h3>
+<p>Cada processo tem o direito de usar o processador por um intervalo de tempo pre-definido.</p>
+<ul>
+<li>É uma dificuldade escolher o tempo do quantum, o tempo de execução, pois devo esperar um tempo maior que o tempo da troca de contexto, o tempo de resposta desejado. </li>
+<li>O tempo de quantum padrão é de <strong>100ms</strong></li>
+<li>Quantum muito longo, se torna um FCFS</li>
+<li>Quantum muito curto, perde vários requisitos, por exemplo eficiêcia</li>
+</ul>
+<h3 id="prioridades">Prioridades</h3>
+<p>Baseia-se no fato que alguns processos são prioritários e devem ser executados antes dos outros. Muito importante em Sistemas operacionais em tempo real. Cada processo é atribuido uma prioridade.
+- Podem ser atribuidas de 2 formas:
+    - <strong>Estática</strong>: Processos são divididos em classes e a cada classe é atribuida uma prioridade, a cada prioridade existe uma fila de prontos associadas
+    - <strong>Dinâmica</strong>: O sistema analisa o comportamento dos processos e atribui prioridades favorecendo um certo tipo de comportamento. Processos I/O devem possui uma prioridade alta.
+        - Prioridade dinâmica: 1/f, onde f é a fração do quantum de tempo de usada na última rodada do processo</p>
+<h3 id="shortest-job-first">Shortest Job First</h3>
+<p>Algoritmo projetado para sistemas em lote, com objetivo de reduzir o tempo de turnaround (tempo de lançamento do processo até seu término). Entretando, requer que o tempo de execução de um processo seja conhecido antes de seu início.</p>
+<ul>
+<li>
+<p>Possui aplicação para sistemas interativos</p>
+</li>
+<li>
+<p>Desvantagens:</p>
+<ul>
+<li>Como determinar o tempo de execução do comando</li>
+<li>Probelma da parada é indecidível</li>
+<li>Necessário combinar técnincas para estimar valores baseados em execuções anteriores (aning)</li>
+</ul>
+</li>
+</ul>
+<h2 id="escalonamento-em-dois-niveis">Escalonamento em dois níveis</h2>
 
 
 
