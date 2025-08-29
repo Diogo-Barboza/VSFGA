@@ -54,9 +54,22 @@ def parse(tokens: list[Token]) -> AST:
     """
     Realiza a análise sintática do código.
     """
-    from pprint import pprint
-    pprint(tokens)
-    raise NotImplementedError
+    curr = None
+    stack = []
+    
+    for token in tokens:
+        if token.kind == "LPAR":
+            curr = []
+            stack.append(curr)
+        elif token.kind == "RPAR":
+            lst = stack.pop()
+            if not stack:
+                return lst
+            stack[-1].append(lst)
+        else:
+            curr.append(token.value)
+    
+    raise RuntimeError
 
 
 def analysis(ast: AST) -> IR:
@@ -92,6 +105,16 @@ def run(source: str) -> Any:
     
     print("=", value)
 
+def run_shell():
+    while True:
+        try:
+            source = input("lisp> ")
+        except EOFError:
+            break
+        if not source:
+            break
+        run(source)
+
 if __name__ == "__main__":
     import sys
 
@@ -99,12 +122,6 @@ if __name__ == "__main__":
         filename = sys.argv[1]
         with open(filename) as fd:
             source = fd.read()
+        run(source)
     else:
-        while True:
-            try:
-                source = input("lisp> ")
-            except EOFError:
-                break
-            if not source:
-                break
-            run(source)
+        run_shell()
