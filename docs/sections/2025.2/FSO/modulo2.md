@@ -180,5 +180,6 @@ Algoritmo projetado para sistemas em lote, com objetivo de reduzir o tempo de tu
 
 ## Escalonamento em dois níveis
 
+Quando quero usar dois casos de escalonamento, um caso típico de escalomanento em dois níveis é o a;goritmo que considera tanto os processos que estão em memória como os processos que estão em disco
 
 

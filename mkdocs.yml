@@ -36,6 +36,10 @@ nav:
       - Plano de ensino: sections/2025.2/FSO/planoEnsino.md
       - Conceitos Iniciais - Módulo 1: sections/2025.2/FSO/conceitosIniciais.md
       - Processos - Módulo 2: sections/2025.2/FSO/modulo2.md
+    - Compiladores: 
+      - Plano de Ensino: sections/2025.2/COMP/planoEnsino.md
+      - Brainfuck: sections/2025.2/COMP/brainfuck.md
+      - JSON: sections/2025.2/COMP/json.md
   - Treinos:
     - Início: sections/treino/treinoshome.md
     - Peito e Tríceps: sections/treino/A.md
