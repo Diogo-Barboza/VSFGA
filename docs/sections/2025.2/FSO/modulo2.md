@@ -169,5 +169,16 @@ Baseia-se no fato que alguns processos são prioritários e devem ser executados
 
 ### Shortest Job First
 
-Algoritmo projetado para sistemas em lote, com objetivo de reduzir o tempo de turnaround (tempo de lançamento do processo até seu término). Entretando, requer que o tempo de execução de um processo seja conhecido antes de seu início. 
+Algoritmo projetado para sistemas em lote, com objetivo de reduzir o tempo de turnaround (tempo de lançamento do processo até seu término). Entretando, requer que o tempo de execução de um processo seja conhecido antes de seu início.
+
+- Possui aplicação para sistemas interativos
+
+- Desvantagens:
+    - Como determinar o tempo de execução do comando
+    - Probelma da parada é indecidível
+    - Necessário combinar técnincas para estimar valores baseados em execuções anteriores (aning)
+
+## Escalonamento em dois níveis
+
+
 
