@@ -94,3 +94,80 @@ Classificação dos modelos de processos quanto ao custo de troca de contextos e
 -  
 
 ![alt text](../../../images/interrupcao.png)
+
+## Escalonamento de Processos
+
+O algortimo de escalonameto é o que vai definir qual processo vai rodar e por quanto tempo.
+
+- A parte do S.O que faz isso é chamado de escalonador
+
+![Escalonador de processos](../../../images/processosEscalonador.png)
+
+Daí surge a multiprogramação. Os escalonadores podem ser classificados em:
+
+**Preemptivos**: Quando faz a suspensão temporaria de um processo, quando possui a capacidade de tirar a força da CPU. <br/>
+**Não-Preemptivos**:  Quando o processo chega a CPU, ele executa até o fim, não possui a capacidade de tirar a força da CPU. <br/>
+
+- Cada processo possui um tempo limitado no processador (time-slice)
+- Os escalonadores não-preemptivos são de projetos mais simples, não confiáveis pois podem abusar do tempo limite da CPU. Isso viola bons critérios de um bom escalonador, justiça, tempo, etc.
+- Escalonadores preemptivos asseguram um uso mais balanceado da CPU, por isso, são usados em maioria pelos S.O.
+- Tais projetos podem possuir deficiência em processos concorrentes, devido a complexidade.
+
+Ao projetar um escalonador deve-se levar em consideração:
+
+- **Justiça**: Um bom escalondaro deve ser justo, todos os processos devem ter uma chance justa de usar o processador
+- **Eficiência**: Quando houver um trabalho a fazer o processador deve estar ocupado
+- **Minimizar o tempo de resposta**: Reduzir o tempo dos usuários interativos, quando se há diferente tipos de processos rodando na máquina.
+- **Minimizar o turnaround**: Reduzir o tempo de processo até o seu término. Soma de tempo de espera por recursos.
+- **Minimizar tempo de espera**: Visa minimizar o tempo de esepra pela CPU
+- **Maximisar throughtput**: Maximizar o número de tarefas executadas por uma unidade de tempo
+
+Não é possível atingir todos esses critérios com maestria em um algoritmo, é necessário uma lista de prioridade.
+
+- Algoritmos clássicos de escalonamento:
+    - Fist Come First Server
+    - Round-Robin: Alternância circular, cada um vai usar um pouco
+    - Prioridades
+    - Shortest Job First
+
+### First Come First Served
+
+O processo obtido pela CPU de acordo com a ordem de chegada, é do tipo **não-preemptivos**, assim o processo obtem a CPU por um tempo inderteminado. 
+
+- Vantagens: 
+    - Simples de implementar
+    - Algoritmo eficiente, CPU sempre utilizada
+- Desvantagens:
+    - Impossiblidade de prever quando um processo vai iniciar
+    - Tempo médio de processo não é respeitado
+    - Tempo de espera = Tempo de serviço - Tempo de chegada
+
+- Justiça: Não. Um processo pode monopolizar
+- Eficiência: OK. A CPU sempre é utilizada, se existe trabalho
+- Minimizar o tempo de resposta: Não. Caso um processo monopolize
+- Minimizar o turnaround: Tarefas longas sendo executadas primeiro, aumenta turnaround (Ver exemplo do SJF a frente)
+- Minimizar waiting time: O tempo de espera não é considerado durante o escalonamento
+- Maximizar throughtput: Se a primeira tarefa for longa, o tempo de término fica alta
+
+### Round-Robin: Alternância circular, cada um vai usar um pouco
+
+Cada processo tem o direito de usar o processador por um intervalo de tempo pre-definido.
+
+- É uma dificuldade escolher o tempo do quantum, o tempo de execução, pois devo esperar um tempo maior que o tempo da troca de contexto, o tempo de resposta desejado. 
+- O tempo de quantum padrão é de **100ms**
+- Quantum muito longo, se torna um FCFS
+- Quantum muito curto, perde vários requisitos, por exemplo eficiêcia
+
+### Prioridades
+
+Baseia-se no fato que alguns processos são prioritários e devem ser executados antes dos outros. Muito importante em Sistemas operacionais em tempo real. Cada processo é atribuido uma prioridade.
+- Podem ser atribuidas de 2 formas:
+    - **Estática**: Processos são divididos em classes e a cada classe é atribuida uma prioridade, a cada prioridade existe uma fila de prontos associadas
+    - **Dinâmica**: O sistema analisa o comportamento dos processos e atribui prioridades favorecendo um certo tipo de comportamento. Processos I/O devem possui uma prioridade alta.
+        - Prioridade dinâmica: 1/f, onde f é a fração do quantum de tempo de usada na última rodada do processo
+
+
+### Shortest Job First
+
+Algoritmo projetado para sistemas em lote, com objetivo de reduzir o tempo de turnaround (tempo de lançamento do processo até seu término). Entretando, requer que o tempo de execução de um processo seja conhecido antes de seu início. 
+
