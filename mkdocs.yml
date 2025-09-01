@@ -40,7 +40,9 @@ nav:
       - Plano de Ensino: sections/2025.2/COMP/planoEnsino.md
       - Brainfuck: sections/2025.2/COMP/brainfuck.md
       - JSON: sections/2025.2/COMP/json.md
-      - LISP: setions/2025.2/COMP/lisp.md
+      - LISP: sections/2025.2/COMP/lisp.md
+    - TPPE:
+      - Design Patterns: sections/2025.2/TPPE/designPattern.md
   - Treinos:
     - Início: sections/treino/treinoshome.md
     - Peito e Tríceps: sections/treino/A.md

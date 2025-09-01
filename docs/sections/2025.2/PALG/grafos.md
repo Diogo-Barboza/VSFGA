@@ -5,4 +5,5 @@
 - Bipartido
 - Direcionado
 - Direcionado acílcico
+- Tapológico nao direcionado
 
