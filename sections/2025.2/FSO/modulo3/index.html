@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../../COMP/lisp/">
+        <link rel="prev" href="../modulo2/">
       
       
-        <link rel="next" href="../../../treino/treinoshome/">
+        <link rel="next" href="../../COMP/planoEnsino/">
       
       
       <link rel="icon" href="../../../../assets/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Design Patterns - VSFGA</title>
+        <title>Threads - Módulo 3 - VSFGA</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#design-patterns-gof" class="md-skip">
+        <a href="#threads" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Design Patterns
+              Threads - Módulo 3
             
           </span>
         </div>
@@ -1122,8 +1122,10 @@
                 
   
   
+    
   
   
+  
     
     
     
@@ -1136,13 +1138,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked>
         
           
           <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="">
@@ -1156,7 +1156,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_3">
             <span class="md-nav__icon md-icon"></span>
             Fundamentos de Sistemas Operacionais
@@ -1170,7 +1170,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../FSO/planoEnsino/" class="md-nav__link">
+      <a href="../planoEnsino/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1191,7 +1191,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../FSO/conceitosIniciais/" class="md-nav__link">
+      <a href="../conceitosIniciais/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1212,7 +1212,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../FSO/modulo2/" class="md-nav__link">
+      <a href="../modulo2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1230,10 +1230,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../FSO/modulo3/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Threads - Módulo 3
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1242,6 +1262,53 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#por-que-utilizar-multiplas-threads" class="md-nav__link">
+    <span class="md-ellipsis">
+      Por que utilizar múltiplas threads?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-arte-de-multiprogramar" class="md-nav__link">
+    <span class="md-ellipsis">
+      A arte de Multiprogramar
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementacao-de-threads" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementação de Threads
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1396,8 +1463,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1412,11 +1477,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_5" >
         
           
           <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="">
@@ -1430,7 +1497,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_5">
             <span class="md-nav__icon md-icon"></span>
             TPPE
@@ -1441,30 +1508,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Design Patterns
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../TPPE/designPattern/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1473,137 +1520,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Índice">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Índice
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#pra-que-usar" class="md-nav__link">
-    <span class="md-ellipsis">
-      Pra que usar?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#padroes-criacionais" class="md-nav__link">
-    <span class="md-ellipsis">
-      Padrões Criacionais
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Padrões Criacionais">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#singleton" class="md-nav__link">
-    <span class="md-ellipsis">
-      Singleton
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Singleton">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#participantes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Participantes
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#factory-method" class="md-nav__link">
-    <span class="md-ellipsis">
-      Factory Method
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Factory Method">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#participantes_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Participantes
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#padroes-estruturais" class="md-nav__link">
-    <span class="md-ellipsis">
-      Padrões Estruturais
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Padrões Estruturais">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#composite" class="md-nav__link">
-    <span class="md-ellipsis">
-      Composite
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Composite">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#participantes_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      Participantes
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1793,57 +1709,72 @@
                   
 
 
-<h1 id="design-patterns-gof">Design Patterns GOF</h1>
-<p>São modelos returilizáveis que descrevem uma solução comprovada para um problema recorrente de design de software. São divididos em 3 categorias:</p>
+<h1 id="threads">Threads</h1>
 <ul>
-<li><strong>Criacionais</strong>: Define mecanismos para a criação de objetos, tornando flexíveis as decisões de instanciação.</li>
-<li><strong>Estruturais</strong>: Define maneiras para a composição de classes e objetos, para formar estruturas maiores e mais eficientes.</li>
-<li><strong>Comportamentais</strong>: Define formas de comunicação e distribuição de responsabilidade entre onjetos que interagem entre si.</li>
-</ul>
-<h2 id="pra-que-usar">Pra que usar?</h2>
-<ul>
-<li><strong>Aprendizado</strong>: Estudar padrões ajuda a entender os princípios de O.O e aplica-los de maneira correta e elegante.</li>
-<li><strong>Reutilização</strong>: Eles fornecem um vocabulário comum para desenvolvidores, facilitando a comunicação e a reutilização de soluções comprovadas.</li>
-<li><strong>Qualidade do código</strong>: Promovem um design de software mais limpo. flexível e fácil de manter.</li>
-<li><strong>Redução de erros</strong>: Eles ajudam a evitar armadilhas comuns de projetos de software.</li>
-</ul>
-<h2 id="padroes-criacionais">Padrões Criacionais</h2>
-<h3 id="singleton">Singleton</h3>
-<p>O padrão <strong>singleton</strong> garante que uma classe tennha apenas uma única instância. É especialmente útil em situações em que a multiplicidade de instâncias pode levar à sobrecarga de recursos ou gestão inconsistente de estado.</p>
-<h4 id="participantes">Participantes</h4>
-<ul>
-<li><strong>Classe principal</strong>: Classe que vai inmplementar o método em sí.</li>
-<li><strong>Construtor privado</strong>: Evita que álguem possa criar um obejto fora do controle da classe principal</li>
-<li><strong>Atributo estático</strong>: Armazena a única instância da classe para que todas as partes da aplicação possam acessá-la.</li>
-<li><strong>Método de acesso</strong>: Fornece um ponto de acesso centralizado para a instância única, o método getInstance() é chamado para obter a instância garantindo que só haja um ponto de acesso.</li>
-</ul>
-<p><img alt="Exemplo Singeton" src="../../../../images/SingletonFoto.png" /></p>
-<h3 id="factory-method">Factory Method</h3>
-<p>Feio para resolver em problemas relacionados à criação de objetos e sua configuração. Ele abstrai do cliente a tarefa de instanciação, permitindo que a fábrica execute a criação de objetos de maneira consistente e flexível.</p>
-<h4 id="participantes_1">Participantes</h4>
-<ul>
-<li><strong>Fábrica mãe</strong>: Ponte de entrada para a criação de ordens de serviço.</li>
-<li><strong>Fábricas específicas</strong>: Cada um é específico para cada tipo de componente.</li>
-<li><strong>Objetos</strong>: Implementam funcionalidade específicas.</li>
-</ul>
-<p><img alt="Factory Method Exemplo" src="../../../../images/FMFoto.png" /></p>
-<h2 id="padroes-estruturais">Padrões Estruturais</h2>
-<h3 id="composite">Composite</h3>
-<p>Combina diversos objetos, em uma estrutura hierárquica fazendo com que um objeto se comporte como container de outros objetos.</p>
-<h4 id="participantes_2">Participantes</h4>
-<ul>
-<li>Interface componente: Define a interface como a todos os elementos. <ul>
-<li><strong>execute()</strong> que será sobrescrito em cada classe.</li>
-</ul>
-</li>
-<li>Folha: Classe que não possui subclasse padrão.</li>
-<li>Composto: Classe que realiza a agregação de elementos similares.<ul>
-<li><strong>add()</strong> Adiciona algum componente ao agregado.</li>
-<li><strong>remove()</strong> Remove elemento do agregado.</li>
+<li>Threads separam conceitos de agrupamento de recursos e execução.</li>
+<li>Processos agrupam recusos</li>
+<li>Threads são escalonadas para execução</li>
+<li>Permitem que múltiplas execuções ocorram no mesmo ambiente</li>
+<li>Devido a maior simplicidade de escalonamento são chamadas de "Processos leves"</li>
+<li>No Multithread, a entidade processo é dividida em processo e thread</li>
+<li>Thread correspondeo ao estado de execução</li>
+<li>No modelo mutlithread existem duas entidade na tabela de processo</li>
+<li>Threads compartilham as mesma varáveis globais</li>
+<li>A proteção dos threads é de responsabilidade do programador</li>
+<li>A pilha é uma estrutura em memória, porem cada thread possui sua própria pilha e não compartilha esses dados com outras threads</li>
+<li>As threads chamam procedimentos diferentes em tempos diferentes</li>
+<li>Chamadas de controle de threads:<ul>
+<li>thread_create: Cria uma thread nova, passando uma função como argumentos para iniciar a execução</li>
+<li>thread_exit: Termina a thread em execução</li>
+<li>thread_yield: Permite que uma thread desista voluntariamente da CPU</li>
 </ul>
 </li>
 </ul>
-<p><img alt="Exemplo de Composite" src="../../../../images/CompositeFoto.png" /></p>
+<h2 id="por-que-utilizar-multiplas-threads">Por que utilizar múltiplas threads?</h2>
+<ul>
+<li>Pelo mesmo motivo que processos concorrentes são melhores que sem concorrência</li>
+<li>Threads possuem troca de contexto mais leve que processos</li>
+<li>Procemos dividir o programa caso exista muitas chamadas blocantes, se as chamadas blocantes forem de diversas fontes melhora-se o tempo</li>
+<li>Para explorar melhor os recursos da máquina</li>
+<li>A intel fez uma campanha avisando que a tendência é aumentar o número de núcleos, não a velocidade deles</li>
+<li>Threads são mais fáceis de cirar e destruir que processos, pois só precisa de uma área alocada</li>
+<li>Em alguns sistemas, criar uma thread é 100 vezes mais rápido que criar um processo</li>
+<li>É um modelo de programação mais simples</li>
+<li>Quando um programa deve tratar dados de diversas fontes:</li>
+</ul>
+<h2 id="a-arte-de-multiprogramar">A arte de Multiprogramar</h2>
+<p>Porem há questões que foram levantadas:</p>
+<ul>
+<li>Fork(): Quando o pai cria o processo filho, ele deve conter o mesmo tanto de threads que o pai ou apenas um? <strong>APENAS UMA THREAD</strong></li>
+<li>Escalonamento: Uma thread estiver bloqueada esperando dados do teclado, ele deveria ser bloqueado?</li>
+<li>O compartilhamento de dados pode causar muitos problemas<ul>
+<li>O que acontece quando uma thread fecha um arquivo que outra thread está lendo? -&lt;</li>
+</ul>
+</li>
+<li>Alguns desafios são solucionados com boas práticas de programação</li>
+</ul>
+<p>Multithreading Programming -&gt; Expectation vs Reality</p>
+<p><img alt="Meme multiThread" src="../../../../images/memeMulti.png" /></p>
+<h2 id="implementacao-de-threads">Implementação de Threads</h2>
+<p>Para implementação das threads, existem diferentes formas para sua implementação. Implementar o modelo de processos e threads a nível de sistema operacional, criando abstrações de processos e de threads</p>
+<ul>
+<li>Implementar threads no sistema operacional</li>
+<li>O kernel do S.O deve criar as threads, organiza seu escalonamento e término</li>
+<li>Geralmente o escalonador do S.O é não-preemptivo</li>
+<li>Quando uma thread dor perder o controle, ela chama o procedimento do ambiente para selecionar outra thread</li>
+<li>Cada processo pode ter seu próprio algoritmo de escalonamento</li>
+<li>Desvantagens<ul>
+<li>Muito cuidado ao usar chamadas bloquantes do sistema, elas rião bloquear todas as threads.</li>
+</ul>
+</li>
+<li>É necessário uma biblioteca de threads, para evitar overhead de contexo entre as threads</li>
+<li>O núcleo vai ver a bibiolteca de threads em modo usuário</li>
+<li>Implementar as threads em S.O continua inserindo um custo caro de troca de contexto</li>
+<li>Enquanto utilizar threads no espaço de usuário reduz o custo de troca, as operações de I/O exigem mais e podem bloquear as outras threads</li>
+</ul>
+<blockquote>
+<p>Conferir essa parte final ( ele passou muito rápido por aqui )</p>
+</blockquote>
 
 
 
