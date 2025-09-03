@@ -1303,6 +1303,48 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Implementação de Threads">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implementacao-em-modo-kernel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementação em modo Kernel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementacao-de-threads-em-modo-usuario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementação de Threads em Modo Usuário
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#threads-em-modo-hibrido" class="md-nav__link">
+    <span class="md-ellipsis">
+      Threads em Modo Híbrido
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparativo-de-threads-em-diversos-so" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comparativo de threads em Diversos S.O
+    </span>
+  </a>
+  
 </li>
       
     </ul>
@@ -1760,21 +1802,39 @@
 <ul>
 <li>Implementar threads no sistema operacional</li>
 <li>O kernel do S.O deve criar as threads, organiza seu escalonamento e término</li>
+<li>Existência de uma tabela de threads no kernel, que contém os dados de cada thread</li>
+<li>É necessário uma biblioteca de threads, para evitar overhead de contexo entre as threads</li>
+<li>O núcleo vai ver a bibiolteca de threads em modo usuário</li>
+</ul>
+<h3 id="implementacao-em-modo-kernel">Implementação em modo Kernel</h3>
+<p><img alt="Exemplo modo Kernel" src="../../../../images/modoKernel.png" /></p>
+<ul>
 <li>Geralmente o escalonador do S.O é não-preemptivo</li>
+<li>Cada processo precisa de sua própria tabela de threads</li>
+<li>Threads manipuladas por funções</li>
 <li>Quando uma thread dor perder o controle, ela chama o procedimento do ambiente para selecionar outra thread</li>
+<li>Troca de contexto muito rápida entre as threads</li>
 <li>Cada processo pode ter seu próprio algoritmo de escalonamento</li>
 <li>Desvantagens<ul>
 <li>Muito cuidado ao usar chamadas bloquantes do sistema, elas rião bloquear todas as threads.</li>
 </ul>
 </li>
-<li>É necessário uma biblioteca de threads, para evitar overhead de contexo entre as threads</li>
-<li>O núcleo vai ver a bibiolteca de threads em modo usuário</li>
-<li>Implementar as threads em S.O continua inserindo um custo caro de troca de contexto</li>
-<li>Enquanto utilizar threads no espaço de usuário reduz o custo de troca, as operações de I/O exigem mais e podem bloquear as outras threads</li>
+<li>A solução é colocar uma "capa" antes de todas as chamadas blocantes do sistema. Desta forma quando uma chamada blocante for realizada ela é mascarada pela biblioteca de threads que faz o teste de bloqueio</li>
 </ul>
-<blockquote>
-<p>Conferir essa parte final ( ele passou muito rápido por aqui )</p>
-</blockquote>
+<h3 id="implementacao-de-threads-em-modo-usuario">Implementação de Threads em Modo Usuário</h3>
+<p><img alt="Exemplo em modo usuário" src="../../../../images/modoUsuario.png" /></p>
+<ul>
+<li>Enquanto utilizar threads no espaço de usuário reduz o custo de troca, as operações de I/O exigem mais e podem bloquear as outras threads</li>
+<li>Implementar as threads em S.O continua inserindo um custo caro de troca de contexto</li>
+</ul>
+<h3 id="threads-em-modo-hibrido">Threads em Modo Híbrido</h3>
+<ul>
+<li>Busca juntar as vantagens dos threads em modo kernel e modo usuário</li>
+<li>Um processo pode ter várias threads de kernel, por usa vez cada kernel pode conter diversar threads em modo usuário</li>
+</ul>
+<p><img alt="Modo Híbrido" src="../../../../images/modohibrido.png" /></p>
+<h2 id="comparativo-de-threads-em-diversos-so">Comparativo de threads em Diversos S.O</h2>
+<p><img alt="Comparativo de threads em S.O" src="../../../../images/comparativoSO.png" /></p>
 
 
 
