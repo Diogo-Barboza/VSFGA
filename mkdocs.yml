@@ -36,6 +36,7 @@ nav:
       - Plano de ensino: sections/2025.2/FSO/planoEnsino.md
       - Conceitos Iniciais - Módulo 1: sections/2025.2/FSO/conceitosIniciais.md
       - Processos - Módulo 2: sections/2025.2/FSO/modulo2.md
+      - Threads - Módulo 3: sections/2025.2/FSO/modulo3.md
     - Compiladores: 
       - Plano de Ensino: sections/2025.2/COMP/planoEnsino.md
       - Brainfuck: sections/2025.2/COMP/brainfuck.md

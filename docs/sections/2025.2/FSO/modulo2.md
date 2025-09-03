@@ -91,7 +91,6 @@ Classificação dos modelos de processos quanto ao custo de troca de contextos e
 ## Implementação de processos
 
 - **TROCA DE CONTEXTO** : Operação básica da multiprogramação, é uma operação de salvamento dos registradores de um processo, para posteriormente restaurar esses regsitradroes, para que esse processo continue a execução como se não tivesse parado
--  
 
 ![alt text](../../../images/interrupcao.png)
 
