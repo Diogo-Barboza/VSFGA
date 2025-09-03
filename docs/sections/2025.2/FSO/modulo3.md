@@ -49,14 +49,40 @@ Para implementação das threads, existem diferentes formas para sua implementa�
 
 - Implementar threads no sistema operacional
 - O kernel do S.O deve criar as threads, organiza seu escalonamento e término
+- Existência de uma tabela de threads no kernel, que contém os dados de cada thread
+- É necessário uma biblioteca de threads, para evitar overhead de contexo entre as threads
+- O núcleo vai ver a bibiolteca de threads em modo usuário
+
+
+### Implementação em modo Kernel
+
+![Exemplo modo Kernel](../../../images/modoKernel.png)
+
 - Geralmente o escalonador do S.O é não-preemptivo
+- Cada processo precisa de sua própria tabela de threads
+- Threads manipuladas por funções
 - Quando uma thread dor perder o controle, ela chama o procedimento do ambiente para selecionar outra thread
+- Troca de contexto muito rápida entre as threads
 - Cada processo pode ter seu próprio algoritmo de escalonamento
 - Desvantagens
     - Muito cuidado ao usar chamadas bloquantes do sistema, elas rião bloquear todas as threads.
-- É necessário uma biblioteca de threads, para evitar overhead de contexo entre as threads
-- O núcleo vai ver a bibiolteca de threads em modo usuário
-- Implementar as threads em S.O continua inserindo um custo caro de troca de contexto
-- Enquanto utilizar threads no espaço de usuário reduz o custo de troca, as operações de I/O exigem mais e podem bloquear as outras threads
+- A solução é colocar uma "capa" antes de todas as chamadas blocantes do sistema. Desta forma quando uma chamada blocante for realizada ela é mascarada pela biblioteca de threads que faz o teste de bloqueio
 
-> Conferir essa parte final ( ele passou muito rápido por aqui )
+### Implementação de Threads em Modo Usuário
+
+![Exemplo em modo usuário](../../../images/modoUsuario.png)
+
+- Enquanto utilizar threads no espaço de usuário reduz o custo de troca, as operações de I/O exigem mais e podem bloquear as outras threads
+- Implementar as threads em S.O continua inserindo um custo caro de troca de contexto
+
+### Threads em Modo Híbrido
+
+- Busca juntar as vantagens dos threads em modo kernel e modo usuário
+- Um processo pode ter várias threads de kernel, por usa vez cada kernel pode conter diversar threads em modo usuário
+
+![Modo Híbrido](../../../images/modohibrido.png)
+
+## Comparativo de threads em Diversos S.O
+
+![Comparativo de threads em S.O](../../../images/comparativoSO.png)
+
