@@ -1347,6 +1347,138 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#modelo-de-execucao-de-threads" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modelo de Execução de Threads
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Modelo de Execução de Threads">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modelo-despachantetrabalhador" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modelo Despachante/Trabalhador
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Modelo Despachante/Trabalhador">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vantagens" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vantagens
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desvantagens" class="md-nav__link">
+    <span class="md-ellipsis">
+      Desvantagens
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modelo-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modelo Time
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Modelo Time">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vantagens_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vantagens
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desvantagens_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Desvantagens
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modelo-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modelo Pipeline
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Modelo Pipeline">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#desvantagens_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Desvantagens
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-arte-de-multiprogramar-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      A arte de Multiprogramar 2
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#condicao-de-corrida" class="md-nav__link">
+    <span class="md-ellipsis">
+      Condição de Corrida
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#condicoes-de-corrida-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Condições de corrida 2
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1820,6 +1952,7 @@
 </ul>
 </li>
 <li>A solução é colocar uma "capa" antes de todas as chamadas blocantes do sistema. Desta forma quando uma chamada blocante for realizada ela é mascarada pela biblioteca de threads que faz o teste de bloqueio</li>
+<li>Pacote POSIX threads</li>
 </ul>
 <h3 id="implementacao-de-threads-em-modo-usuario">Implementação de Threads em Modo Usuário</h3>
 <p><img alt="Exemplo em modo usuário" src="../../../../images/modoUsuario.png" /></p>
@@ -1835,6 +1968,171 @@
 <p><img alt="Modo Híbrido" src="../../../../images/modohibrido.png" /></p>
 <h2 id="comparativo-de-threads-em-diversos-so">Comparativo de threads em Diversos S.O</h2>
 <p><img alt="Comparativo de threads em S.O" src="../../../../images/comparativoSO.png" /></p>
+<h2 id="modelo-de-execucao-de-threads">Modelo de Execução de Threads</h2>
+<ul>
+<li>Número de threads que queremos utilizar:<ul>
+<li><strong>Estática</strong>: Não muda durante a execução, número <strong>fixo</strong>.</li>
+<li><strong>Dinâmica</strong>: Uma thread é criada para tratar cada requisição.</li>
+</ul>
+</li>
+</ul>
+<h3 id="modelo-despachantetrabalhador">Modelo Despachante/Trabalhador</h3>
+<ul>
+<li>Uma thread dispachante é reposnável por receber trabalho, porém não processa</li>
+<li>O despachante seleciona uma thread trabalhadora para entregar o trabalho</li>
+<li>A trabalhadora executa a solicitação e sinaliza o despachante</li>
+</ul>
+<p><img alt="Ex.: Despachante" src="../../../../images/despachante.png" /></p>
+<p>Um exemplo desse modelo é o servidor web, que pode sofrer várias requisições de diversos clientes, essas requisições podem envolver leitura de disco. Se a mesma thread recebe uma nova requisição e ler o disco, pode-se ter um problema.</p>
+<h4 id="vantagens">Vantagens</h4>
+<ul>
+<li>Consumo rápido de mensagens</li>
+<li>Boa distribuição das requisições</li>
+<li>flexibilidade, podemos mudar o número de threads de forma fácil</li>
+</ul>
+<h4 id="desvantagens">Desvantagens</h4>
+<ul>
+<li>Pouco uso de CPU pela thread despachante</li>
+<li>por exemplo, de 4 threads trabalhadora e 1 despachante, em aglguns beanchmarks pode considerar apenas 80% do uso total de CPU.</li>
+</ul>
+<h3 id="modelo-time">Modelo Time</h3>
+<p>Nesse modelo as threads são autônomas e gulosas por serviço, elas acessam um "poll" de tarefa, obtém e as executam.</p>
+<p><img alt="Exemplo de modelo time" src="../../../../images/timexemplo.png" /></p>
+<h4 id="vantagens_1">Vantagens</h4>
+<ul>
+<li>Bom consumo de mensagens</li>
+<li>Boa distribuiçãi de mensagens</li>
+<li>Flexibilidade em mudar o número de tarefas</li>
+</ul>
+<h4 id="desvantagens_1">Desvantagens</h4>
+<ul>
+<li>Cuidado na implementação, em alguns computadores modernos, uma thread inicia o programa de deve ser responsável por criar todas as outras, depois disso, ela deve se tornar uma thread normal do time.</li>
+</ul>
+<h3 id="modelo-pipeline">Modelo Pipeline</h3>
+<p>Nesse modelo, cada thread realiza uma tarefa específica produzinfo dados de entrada de outra thread, os dados de saída final são produzidos pela última thread.</p>
+<p><img alt="Modelo pipeline" src="../../../../images/pipelineXemplo.png" /></p>
+<h4 id="desvantagens_2">Desvantagens</h4>
+<ul>
+<li>
+<p>Se uma thread for muito mais lenta que as outras, todo o processamento é desperdição</p>
+</li>
+<li>
+<p>Muitas vezes não é fácil dividir a tarefa em um pipeline</p>
+</li>
+</ul>
+<p>-&gt; qual a vantagem dela entre as outras</p>
+<h2 id="a-arte-de-multiprogramar-2">A arte de Multiprogramar 2</h2>
+<p>Convertendo código monothread em código multithread é um tarefa difícil, especialmente com variáveis globais</p>
+<p>Ex.:</p>
+<ul>
+<li>não-thread-safe</li>
+</ul>
+<pre><code class="language-c">int vetor[256];
+
+int thread(int val, int pos){
+    vetor[pos] = val;
+}
+</code></pre>
+<ul>
+<li>thread-safe</li>
+</ul>
+<pre><code class="language-c">int thread(int val, int pos){
+    int vetor[256];
+    vetor[pos] = val;
+}
+</code></pre>
+<p>Dessa forma definidas variáveis globais em sistemas Unix e são amplamente utilizadas. Ex.: errno.</p>
+<ul>
+<li>Recebe dados via rede, verifica se vai bloquear</li>
+</ul>
+<pre><code class="language-c">while(1) {
+    int len = recv(socket_client, buf, sizeof(buf), 0);
+    if(len == -1){
+        if(errno != EAGAIN &amp;&amp; errno != EWOULDBLOCK) {
+            ...
+            return -1;
+        }
+    }
+}
+</code></pre>
+<ul>
+<li>Esse problema pode acontecer com chamadas de sistema, por exemplo, alocar uma região de 10 inteiros na memória para o programa. <ul>
+<li>O probelma é, e se houver uma troca de contexto no meio da chamada? o malloc salva informações em uma tabela global de memórias</li>
+</ul>
+</li>
+<li>Utilizar varáveis compartilhadas entre as threads <strong>requer cuidado</strong>.</li>
+<li>Em computadores modernos, a ordem de execução é definida pelo SO</li>
+<li>Algum desses problemas são conhecidas como <strong>condições de Corrida</strong>.</li>
+</ul>
+<h2 id="condicao-de-corrida">Condição de Corrida</h2>
+<p>São também conhecidos como condições de disputa, como o SO determina através do seu escalonador como os processos irão executar, não sabemos a ordem que os processos podem executar.</p>
+<ul>
+<li>
+<p>TROCAS DE CONTEXTO PODEM ACONTECER A QUALQUER MOMENTO!!</p>
+</li>
+<li>
+<p>Considere os seguintes processos/threads incremendando uma varável em memória compartilhada</p>
+</li>
+<li>
+<p>Considere, x = 0 inicialmente. Quais valores possíveis que x pode obter ao final? </p>
+</li>
+<li>
+<p>Escalonamento: A -&gt; B</p>
+</li>
+</ul>
+<p><img alt="alt text" src="../../../../images/Condi%C3%A7%C3%A3odecorrida1.png" /></p>
+<ul>
+<li>Escalonamento: A -&gt; B -&gt; A</li>
+</ul>
+<p><img alt="alt text" src="../../../../images/escalonamentoaba.png" /></p>
+<ul>
+<li>
+<p>Esse comportamento tede a ser bem indesejável, afinal na cabeça do programador "A variável X foi incrementada duas vezes"</p>
+</li>
+<li>
+<p>O debug dessas operações podem ser extremamente complexo.</p>
+</li>
+</ul>
+<h2 id="condicoes-de-corrida-2">Condições de corrida 2</h2>
+<p>Imagina que um servidor de impressão enumere as vagas dos arquivos impressos 0, 1, 2, ...
+- Uma variável next aponta para a próxima posição livre a ser impressa
+- Imagina agoora que o processo A e B desejaram imprimir um arquivo e o servidor está com a seguinte configuração</p>
+<ul>
+<li>Escalonamento A -&gt; B</li>
+</ul>
+<p><img alt="alt text" src="../../../../images/corrida2.png" /></p>
+<p>depois...</p>
+<p><img alt="alt text" src="../../../../images/corrida2pt2.png" /></p>
+<ul>
+<li>Escalonamento A -&gt; B -&gt; A</li>
+</ul>
+<p><img alt="alt text" src="../../../../images/corrida2aba.png" /></p>
+<p>depois ...</p>
+<p><img alt="alt text" src="../../../../images/corrida2abapt2.png" /></p>
+<ul>
+<li>
+<p>Precisa-se assegurar que os processos que estejam trabalhando na mesma região de memória não sejam interrompidos, ou aguardem o término do outro processo antes de iniciar suas atividades. Esse processo é conhecido como <strong>exclusão mútua</strong>.</p>
+</li>
+<li>
+<p>O trecho de código que há acesso de leitura ou escrita à dados compartilhados é chamado de <strong>seção crítica</strong>.</p>
+</li>
+<li>
+<p>No primeiro exemplo a seção crítica é a operação de incremento, no segundo é toda a operação de escrever, a seção crítica normalmente é <strong>MAIS</strong> de uma instrução.</p>
+</li>
+<li>
+<p>Para evitar as condições de corrida, são colocadas funções antes de entrar e depois de sair da seção crítica.</p>
+</li>
+<li>Essas funções utilizam diversas técnicas para impedir que os dois processos estejam simultaneamente na seção crítica e garantir a exclusão mútua.</li>
+</ul>
+<pre><code class="language-c">int thread(){
+    while (true) {
+        while (lock == 1) {}
+        lock = 1;
+        regiao_critica();
+        lock = 0;
+    }
+}
+</code></pre>
 
 
 
