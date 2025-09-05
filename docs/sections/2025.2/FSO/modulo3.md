@@ -238,12 +238,20 @@ depois ...
 
 - Precisa-se assegurar que os processos que estejam trabalhando na mesma região de memória não sejam interrompidos, ou aguardem o término do outro processo antes de iniciar suas atividades. Esse processo é conhecido como **exclusão mútua**.
 
+## Regiões Críticas
+
 - O trecho de código que há acesso de leitura ou escrita à dados compartilhados é chamado de **seção crítica**.
 
 - No primeiro exemplo a seção crítica é a operação de incremento, no segundo é toda a operação de escrever, a seção crítica normalmente é **MAIS** de uma instrução.
 
 - Para evitar as condições de corrida, são colocadas funções antes de entrar e depois de sair da seção crítica.
 - Essas funções utilizam diversas técnicas para impedir que os dois processos estejam simultaneamente na seção crítica e garantir a exclusão mútua.
+
+- Existem funções que utilizam diversas técnicas para impedir que dois processos estejam simultaneamente na seção crítica e garantir a exclusão mútua.
+
+## Variáveis de impedimento
+
+- Variável de impedimento busca marcar se existe algúem na seção crítica. Se for 1, não procede.
 
 ```c
 int thread(){
