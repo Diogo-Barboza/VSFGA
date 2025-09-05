@@ -1479,6 +1479,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#regioes-criticas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Regiões Críticas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variaveis-de-impedimento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variáveis de impedimento
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2110,9 +2128,10 @@ int thread(int val, int pos){
 <p>depois ...</p>
 <p><img alt="alt text" src="../../../../images/corrida2abapt2.png" /></p>
 <ul>
-<li>
-<p>Precisa-se assegurar que os processos que estejam trabalhando na mesma região de memória não sejam interrompidos, ou aguardem o término do outro processo antes de iniciar suas atividades. Esse processo é conhecido como <strong>exclusão mútua</strong>.</p>
-</li>
+<li>Precisa-se assegurar que os processos que estejam trabalhando na mesma região de memória não sejam interrompidos, ou aguardem o término do outro processo antes de iniciar suas atividades. Esse processo é conhecido como <strong>exclusão mútua</strong>.</li>
+</ul>
+<h2 id="regioes-criticas">Regiões Críticas</h2>
+<ul>
 <li>
 <p>O trecho de código que há acesso de leitura ou escrita à dados compartilhados é chamado de <strong>seção crítica</strong>.</p>
 </li>
@@ -2122,7 +2141,16 @@ int thread(int val, int pos){
 <li>
 <p>Para evitar as condições de corrida, são colocadas funções antes de entrar e depois de sair da seção crítica.</p>
 </li>
-<li>Essas funções utilizam diversas técnicas para impedir que os dois processos estejam simultaneamente na seção crítica e garantir a exclusão mútua.</li>
+<li>
+<p>Essas funções utilizam diversas técnicas para impedir que os dois processos estejam simultaneamente na seção crítica e garantir a exclusão mútua.</p>
+</li>
+<li>
+<p>Existem funções que utilizam diversas técnicas para impedir que dois processos estejam simultaneamente na seção crítica e garantir a exclusão mútua.</p>
+</li>
+</ul>
+<h2 id="variaveis-de-impedimento">Variáveis de impedimento</h2>
+<ul>
+<li>Variável de impedimento busca marcar se existe algúem na seção crítica. Se for 1, não procede.</li>
 </ul>
 <pre><code class="language-c">int thread(){
     while (true) {
