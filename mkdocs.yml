@@ -44,6 +44,7 @@ nav:
       - LISP: sections/2025.2/COMP/lisp.md
     - TPPE:
       - Design Patterns: sections/2025.2/TPPE/designPattern.md
+      - Framework JUnit: sections/2025.2/TPPE/frameworkJunit.md
   - Treinos:
     - Início: sections/treino/treinoshome.md
     - Peito e Tríceps: sections/treino/A.md
