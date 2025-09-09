@@ -32,6 +32,7 @@ nav:
       - Plano de Ensino: sections/2025.2/PALG/planoEnsino.md
     - Estruturas de Dados 2025.2:
       - Plano de Ensino: sections/2025.2/EDA2/planoEnsino.md
+      - Árvores Binárias: sections/2025.2/EDA2/arvore.md
     - Fundamentos de Sistemas Operacionais:
       - Plano de ensino: sections/2025.2/FSO/planoEnsino.md
       - Conceitos Iniciais - Módulo 1: sections/2025.2/FSO/conceitosIniciais.md
