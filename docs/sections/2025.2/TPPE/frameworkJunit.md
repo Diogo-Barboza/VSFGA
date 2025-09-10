@@ -117,3 +117,10 @@ O método de teste anotado com @Ignore não é considerado durante a execução 
 
 - Útil para marcar testes a serem implementados durante o desenvolvimento usando TDD. 
     - Testes isolados não influenciarão na prática TDD (barras verdes / vermelhas). 
+
+## Teste Parametrizado
+
+- Testes parametrizados são muito úteis para testar o comportamento de uma única unidade, cujas saídas esepradas variam conforme as entradas providas.
+- Ao invés de escrever um teste para cada entrada e saída, escrevemos apenas um teste, e vários pares de parâmetros.
+    - Para cada par (entrada e saída), um teste será executado
+    
