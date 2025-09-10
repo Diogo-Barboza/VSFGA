@@ -1223,6 +1223,66 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#funcao-maximum" class="md-nav__link">
+    <span class="md-ellipsis">
+      Função maximum
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#antecessor-e-sucessor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Antecessor e Sucessor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#insere" class="md-nav__link">
+    <span class="md-ellipsis">
+      Insere
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remocao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Remoção
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arvore-binaria-de-busca-rubro-negro-esquedista" class="md-nav__link">
+    <span class="md-ellipsis">
+      Árvore Binária de Busca - Rubro Negro Esquedista
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Árvore Binária de Busca - Rubro Negro Esquedista">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#insercao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inserção
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1902,6 +1962,142 @@ celula *buscaInt(celula *raiz, int x){ // de forma interativa
     return raiz;
 }
 </code></pre>
+<h3 id="funcao-maximum">Função maximum</h3>
+<pre><code class="language-c">celula *maximo(celula *raiz){ // Interativamente
+    if(raiz != NULL){
+        while(raiz -&gt; dir != NULL) {
+            raiz = raiz -&gt; dir;
+        }
+    }
+    return raiz;
+}
+
+celula *maximoRec(celula *raiz){
+    if(raiz != NULL &amp; raiz -&gt; dir != NULL){
+        return maximo(raiz -&gt; dir);
+    }
+    return raiz;
+}
+</code></pre>
+<blockquote>
+<p>Implementar função mínimo</p>
+</blockquote>
+<h3 id="antecessor-e-sucessor">Antecessor e Sucessor</h3>
+<ul>
+<li>Antecessor: É o maior elemento da subárvore esquerda, ou o primeiro ancestral à esquerda (na "subida")</li>
+<li>Sucessor: É o maior elemento da subárvore direita, ou o primeiro ancestra à direita ("na subida")</li>
+</ul>
+<pre><code class="language-c">celula antecessor(celula *no){
+    if ( no -&gt; esq != NULL){
+        return maximo(no -&gt; esq);
+    }else{
+        return ancestral_a_esq(no);
+    }
+}
+
+celula antecessor_a_esq(no -&gt; pai);
+</code></pre>
+<h3 id="insere">Insere</h3>
+<pre><code class="language-c">celula *insere(celula *raiz, int x){
+    if ( raiz != NULL){
+        if (x &lt; raiz -&gt; dado){
+            raiz -&gt; esq = insere(raiz -&gt; esq, x);
+        }else if(x &gt; raiz -&gt; dado){
+            raiz -&gt; dir = insere(raiz -&gt; dir, x);
+        }
+        return raiz;
+    }else{
+        celula *novo = malloc(sizeof(celula));
+        novo -&gt; esq = novo -&gt; dir = NULL;
+        novo -&gt; dado = x;
+        return novo;
+    }
+}
+</code></pre>
+<h3 id="remocao">Remoção</h3>
+<p><img alt="Exemplo de árvore binaria" src="../../../../images/ABBexemplo.png" /></p>
+<ol>
+<li>Se for <strong>FOLHA</strong>, basta remover.</li>
+<li>Se tiver só uma subárvore (esq ou dir) basta concertar ao nó pai.</li>
+<li>se houver subárvores a esquerda e direita, troco o calor do nó com seu antecessor e remove o nó que era antecessor pelos casos 1 ou 2.</li>
+<li>Com essa troca, a árvore continua ABB</li>
+<li>Antecessor não possui filho direito</li>
+</ol>
+<pre><code class="language-c">celua *remove(celula *raiz, int x){
+    if (raiz != NULL){
+        if(x &lt; raiz -&gt; dado)
+            raiz -&gt; esq = remove(raiz -&gt; esq, x);
+        else if (x &gt; raiz -&gt; dado)
+            raiz -&gt; dir = remove(raiz -&gt; dir, x);
+        else{
+            if(raiz -&gt; esq == NULL){
+                celula *ret = raiz -&gt; dir;
+                free(raiz);
+                return ret;
+            }
+            else if(raiz -&gt; dir == NULL){
+                celula *ret = raiz -&gt; dir;
+                free(raiz);
+                return ret;
+            }else
+                remover_antecessor(raiz);
+        }
+    return raiz;
+}
+
+void remover_antecessor(celula *raiz){
+    celula *pai = raiz;
+    celula *max = raiz -&gt; esq;
+    while(max -&gt; dir != NULL){
+        pai = max;
+        max = max -&gt; dir;
+    }
+
+    raiz -&gt; dado = max -&gt; dado;
+
+    if(max == pai -&gt; esq)
+        pai -&gt; esq = max -&gt; esq;
+    else
+        pai -&gt; dir - max -&gt; esq;
+
+    free(max);
+}
+</code></pre>
+<h2 id="arvore-binaria-de-busca-rubro-negro-esquedista">Árvore Binária de Busca - Rubro Negro Esquedista</h2>
+<p>É uma ABB que:</p>
+<ol>
+<li>Todo nó é vermelho ou preto</li>
+<li>A raiz é preta</li>
+<li>As folhas são NULL e tem cor preta</li>
+<li>Se um nó é vermelho:<ul>
+<li>É filho esquerdo de um nó preto</li>
+<li>Seus filhos são pretos</li>
+</ul>
+</li>
+<li>Para todo nó, o caminho até uma folha descendente te ma mesma quantidade de nós pretos<ul>
+<li>Chamamos de <strong>altura negra</strong> de nó</li>
+</ul>
+</li>
+</ol>
+<p>Exemplo:</p>
+<p><img alt="Árvore rubro negra esquerdista" src="../../../../images/abbrubonegra.png" /></p>
+<p>Seja <u>bh</u> a <u>altura negra</u> da árvore e h a <u>altura da árvore</u></p>
+<ul>
+<li>ABB possui pelo menos <span class="arithmatex">\(2^{bh} - 1\)</span> nós</li>
+<li>A altura h de uma ABB-RNE é, no máximo, o dobro da altura negra bh. (<span class="arithmatex">\(h \les 2 \dot bh\)</span> =&gt; <span class="arithmatex">\(bh = \frac{h}{2}\)</span>) </li>
+</ul>
+<h3 id="insercao">Inserção</h3>
+<p>Todo novo nó numa ABB-RNE possui inicialmente a cor vermelha. Ao inserir um novo nó numa ABB-RNE, podemos ter os seguintes cenários com o novo nó:</p>
+<ol>
+<li>Filho esquero de um nó preto. (Irmão preto)</li>
+<li>Filho direito de um nó preto.<ul>
+<li>2.1 Irmão vermelho</li>
+<li>2.2 Irmão preto</li>
+</ul>
+</li>
+<li>Filho esquedo de um nó vermelho (Irmão e vô preto)</li>
+<li>Filho direito de nó vermelho (Irmão preto)</li>
+</ol>
 
 
 
