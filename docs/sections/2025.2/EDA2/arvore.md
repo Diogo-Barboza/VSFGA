@@ -237,7 +237,7 @@ Exemplo:
 Seja <u>bh</u> a <u>altura negra</u> da árvore e h a <u>altura da árvore</u>
 
 - ABB possui pelo menos $2^{bh} - 1$ nós
-- A altura h de uma ABB-RNE é, no máximo, o dobro da altura negra bh. ($h \les 2 \dot bh$ => $bh = \frac{h}{2}$) 
+- A altura h de uma ABB-RNE é, no máximo, o dobro da altura negra bh. ($h \leq 2 \dot bh$ => $bh = \frac{h}{2}$) 
 
 ### Inserção
 
