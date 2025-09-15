@@ -250,3 +250,67 @@ Todo novo nó numa ABB-RNE possui inicialmente a cor vermelha. Ao inserir um nov
 3. Filho esquedo de um nó vermelho (Irmão e vô preto)
 4. Filho direito de nó vermelho (Irmão preto)
 
+### Operações
+
+#### Subida de cor
+
+![Subida de cor](../../../images/subidadecor.png)
+
+#### Rotação à Esquerda 
+
+![Rotação a Esquerda](../../../images/rotEsquerda.png)
+
+#### Rotação à Direita
+
+![Rotação a Direita](../../../images/rotDireita.png)
+
+### Condições de Corrida
+
+Estando em um nó x:
+
+1. Se o filho esquerdo e o filho direito de X, forem vermelhos, **Subida de Cor**
+2. Se o filho esquerdo dor preto e o direito, vermelho, **rotação à esquerda**
+3. Se o filho esquerdo for vermelho e o filho esquerdo do filho esquerdo também, **rotação à direita**
+
+### Implementação
+
+```c
+enum cor {verm, preto};
+typedef struct celula{
+    int dado;
+    enum cor cor;
+    struct celula *esq, *dir;
+}celula;
+
+int ehVerm(celula *a){
+    if(a -> cor == verm) return 1;
+    return 0;
+}
+
+celula *rotacao_a_esquerda(celula *a){
+    celula *b = a -> dir;
+    celula *beta = b -> esq;
+
+    b -> esq = a;
+    a -> dir = beta;
+    b -> cor = a -> cor;
+    a -> cor = verm;
+
+    return b;
+}
+
+celula *rotacao_a_direita(celula *a){
+    celula *b = a -> esq;
+    a -> esq = b -> dir;
+    b -> dir = a;
+    b -> cor = a -> cor;
+    a -> cor = verm;
+
+    return b;
+}
+
+void subida_cor(celula *a){
+    a -> cor = verm;
+    a -> esq -> cor = a -> dir -> cor == preto;
+}
+```

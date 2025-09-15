@@ -47,3 +47,10 @@ int main () {
 
     return 0;
 }
+
+
+typedef struct celula { 
+    int dado;
+    struct celula *esq, *dir;
+} celula;
+
