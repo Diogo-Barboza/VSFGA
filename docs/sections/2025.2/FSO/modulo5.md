@@ -75,14 +75,14 @@ São objetos que um processo pode adquirir de maneira exclusiva, ou não, na obt
 
 - Pode ser retirado do proprietário por uma entidade externa sem causa-lhe prejuizo:
     - Ex.: Memória não utilizada
-    - Se dois programas, precisam utilizar um esoaço de memória e usar a impressora.
+    - Se dois programas, precisam utilizar um esoaço de memória e usar a impressora. Imagine a situação que P1 obteve a impressora, P2 obteve a memória e não há mais memória disponível. Aparente impasse, mas neste caso, é possível transferir a memória para P1 de forma que termine sua execução
 
-> Revsar aqui.
 
 ### Não-Preemptíveis
 
 - Um recurso não pode ser tomado à força
 - O processo que o possui deve libera-ló de espontaneamente
+- Por exemplo, se um programa começou a escrever um arquivo, ou começar a imprimir uma página, não é possível interromper esse processo sem prejuízos
 - Maior parte dos nossos recursos são, não-preemptíveis
 
 ## Modelagen de Deadlocks
