@@ -1283,6 +1283,66 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#operacoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operações
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Operações">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#subida-de-cor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subida de cor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rotacao-a-esquerda" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rotação à Esquerda
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rotacao-a-direita" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rotação à Direita
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#condicoes-de-corrida" class="md-nav__link">
+    <span class="md-ellipsis">
+      Condições de Corrida
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementacao_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementação
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1446,6 +1506,27 @@
   
   <span class="md-ellipsis">
     Comunicação entre Threads - Módulo 4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FSO/modulo5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Problemas Clássicos de IPC e Deadlock - Módulo 5
   </span>
   
 
@@ -2098,6 +2179,60 @@ void remover_antecessor(celula *raiz){
 <li>Filho esquedo de um nó vermelho (Irmão e vô preto)</li>
 <li>Filho direito de nó vermelho (Irmão preto)</li>
 </ol>
+<h3 id="operacoes">Operações</h3>
+<h4 id="subida-de-cor">Subida de cor</h4>
+<p><img alt="Subida de cor" src="../../../../images/subidadecor.png" /></p>
+<h4 id="rotacao-a-esquerda">Rotação à Esquerda</h4>
+<p><img alt="Rotação a Esquerda" src="../../../../images/rotEsquerda.png" /></p>
+<h4 id="rotacao-a-direita">Rotação à Direita</h4>
+<p><img alt="Rotação a Direita" src="../../../../images/rotDireita.png" /></p>
+<h3 id="condicoes-de-corrida">Condições de Corrida</h3>
+<p>Estando em um nó x:</p>
+<ol>
+<li>Se o filho esquerdo e o filho direito de X, forem vermelhos, <strong>Subida de Cor</strong></li>
+<li>Se o filho esquerdo dor preto e o direito, vermelho, <strong>rotação à esquerda</strong></li>
+<li>Se o filho esquerdo for vermelho e o filho esquerdo do filho esquerdo também, <strong>rotação à direita</strong></li>
+</ol>
+<h3 id="implementacao_1">Implementação</h3>
+<pre><code class="language-c">enum cor {verm, preto};
+typedef struct celula{
+    int dado;
+    enum cor cor;
+    struct celula *esq, *dir;
+}celula;
+
+int ehVerm(celula *a){
+    if(a -&gt; cor == verm) return 1;
+    return 0;
+}
+
+celula *rotacao_a_esquerda(celula *a){
+    celula *b = a -&gt; dir;
+    celula *beta = b -&gt; esq;
+
+    b -&gt; esq = a;
+    a -&gt; dir = beta;
+    b -&gt; cor = a -&gt; cor;
+    a -&gt; cor = verm;
+
+    return b;
+}
+
+celula *rotacao_a_direita(celula *a){
+    celula *b = a -&gt; esq;
+    a -&gt; esq = b -&gt; dir;
+    b -&gt; dir = a;
+    b -&gt; cor = a -&gt; cor;
+    a -&gt; cor = verm;
+
+    return b;
+}
+
+void subida_cor(celula *a){
+    a -&gt; cor = verm;
+    a -&gt; esq -&gt; cor = a -&gt; dir -&gt; cor == preto;
+}
+</code></pre>
 
 
 
