@@ -151,9 +151,13 @@ Em alguns casos pode ser viável tomar um recursos do seu proprietário à forç
 
 Ao saber que a possiblidade de deadlock é grande, pode-se utilizar um arquivo de log que é atualizado periodicamente, que contém uma imagem do processo naquele momento. Esse ponto salvaguarda (checkpoint) permite que o processo seja reinicializado a partir daquele moemento, em algum instante futuro.
 
-- Quando um deadlock é detectado, sabe-se quais recursos são necessários, para realizar a recuperaça2o, escolhe-se um processo em posse dos recursos e realiza o seu rollback até um momento anterior à aquisição dos recursos. Desta forma, os recursos podem ser entregues a outros processos e eles na2o são prejudicados.
+- Quando um deadlock é detectado, sabe-se quais recursos são necessários, para realizar a recuperação, escolhe-se um processo em posse dos recursos e realiza o seu rollback até um momento anterior à aquisição dos recursos. Desta forma, os recursos podem ser entregues a outros processos e eles não são prejudicados.
 
-> Voltar aqui
+#### Eliminação de Projetos
+
+Provavelmente a maneira mais bruta de se eliminar um deadlock, pois ele remove os processos que estão em deadlock para quebrar os ciclos, com um pouco de sorte (pois podem exitir múltiplos ciclos), é possível que o deadlock se resolva rapidamente.
+
+- Quando for possível, deve-se eliminar um processo que possa ser reexecutado desde o ínicio sem grandes perdas ou danos. Alguns processos como atualizadores de bancos de dados podem, nem sempre, executar mais uma vez com segurança.
 
 ### Evitar o Deadlock 
 
@@ -210,3 +214,9 @@ Forçar que um porocesso tenha apenas um recurso por vez, porém para cenários 
 Neste caso, temos uma situação de deadlock que ocorre em três processos. 
 
 - Não é obritagatório que todos os processos peçam todos os recursos ao mesmo tempo
+
+## Concluão
+
+Os deadlocks precisam de quatro condições para ocorrer, ocorrem quando todos os membros de um conjunto são bloquados esperando por eventos que somente pode ser causados por membros desse conjunto, essa situação faz que todos processo esperem para sempre.
+
+- A maioria dos S.O modernos **Ignoram e não detectam**, pois isto é **resposabilidade para os programadores** de conhecer os mecanismos de prevenção de deadlock e **implementá-los**.
