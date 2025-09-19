@@ -1399,6 +1399,141 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Modelagen de Deadlocks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ignorar-o-problema" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ignorar o Problema
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detectar-e-recuperar-o-deadlock" class="md-nav__link">
+    <span class="md-ellipsis">
+      Detectar e Recuperar o Deadlock
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detectar e Recuperar o Deadlock">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#preempcao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Preempção
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roolbacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Roolbacks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eliminacao-de-projetos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eliminação de Projetos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evitar-o-deadlock" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evitar o Deadlock
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prevenir-o-deadlock" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prevenir o Deadlock
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prevenir o Deadlock">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#impedir-exclusao-mutua" class="md-nav__link">
+    <span class="md-ellipsis">
+      Impedir exclusão mútua
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impedir-a-posse-e-espera" class="md-nav__link">
+    <span class="md-ellipsis">
+      Impedir a posse e espera
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impedir-a-nao-preempcao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Impedir a não-preempção
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impedir-a-espera-circular" class="md-nav__link">
+    <span class="md-ellipsis">
+      Impedir a espera Circular
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deadlock-envolvendo-3-processos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deadlock Envolvendo 3 Processos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concluao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concluão
+    </span>
+  </a>
+  
 </li>
       
     </ul>
@@ -1924,9 +2059,139 @@ contexto para outro filósofo, neste caso, todos os filósofos terão um garfo e
 <li>Maior parte dos nossos recursos são, não-preemptíveis</li>
 </ul>
 <h2 id="modelagen-de-deadlocks">Modelagen de Deadlocks</h2>
-<blockquote>
-<p>Próxima aula.</p>
-</blockquote>
+<p>Holt (1972) demonstrou como deadlocks podem ser modelados com grafos dirigidos.</p>
+<ul>
+<li>Os grafos possuem dois itpos de nós, processos e recursos</li>
+</ul>
+<p>Em situação operacional de computador, três processos estão na seguinte situação:</p>
+<ul>
+<li>O processo P1 tem a posse do recurso R1</li>
+<li>O processo P2 tem a posse do recurso R2</li>
+<li>O processo P3 tem a posse do recruso R3</li>
+</ul>
+<p>O processo P1 solicita o recurso R2, o processo P2 solicita o recurso R3, e o processo P3 solicita o recurso R1. Sobre essa situação, é correto afirmar que:</p>
+<ol>
+<li>Não haverá deadlock, pois o processo P1 não solicitou o recurso R3</li>
+<li>Tem-se uma condição de deadlock</li>
+<li>Não haverá deadlock, pois o processo P3 não solicitou o recurso R3</li>
+<li>Só ocorrerá deadlock caso P1 solicite o recurso R3, P2 solicite o recurso R1 e P3 solicite o recurso R2</li>
+<li>
+<p>Não haverá deadlock, pois o processo P2 não solicitou o recurso R1</p>
+</li>
+<li>
+<p>No entanto, algumas questões podem cobrar apenas "um processo aguardando outro"</p>
+</li>
+</ol>
+<p>Vimos que é função do S.O gerenciar or recursos computacionais. Estratégias usadas para tratar deadlock:</p>
+<ul>
+<li><strong>Ignorar</strong> o problema</li>
+<li><strong>Detectar</strong> e recuperar o deadlock</li>
+<li><strong>Evitar</strong> o deadlock</li>
+<li><strong>Prevenir</strong> o deadlock</li>
+</ul>
+<h3 id="ignorar-o-problema">Ignorar o Problema</h3>
+<ul>
+<li>O "Algoritmo do avestruz"</li>
+<li>Enfie a sua cabeça na areia e finja que não há um problema</li>
+<li>Não vale a pena degradar a performance do sistema para tratar uma situação que ocorre com pouca frequência</li>
+<li>A maioria dos sistemas modernos são desta forma!</li>
+</ul>
+<h3 id="detectar-e-recuperar-o-deadlock">Detectar e Recuperar o Deadlock</h3>
+<p>Como existe a possibildiade de ocorrência do problema, o S.O deve tratá-lo</p>
+<ul>
+<li>Técnica dividida em duas fases:<ul>
+<li>Detecção de deadlock</li>
+<li>Recuperação do Deadlock</li>
+</ul>
+</li>
+</ul>
+<p>Aproveitando o modelo de Holt, uma grafo é construído com alocações dos recursos, neste grafo um deadlock é representado por um ciclo, desta forma todos os processos que estão nesse ciclo estão em deadlock. Para a detecção de ciclos em grafos dirigidos: diversos são conhecidos. Essa estratégia pode ser estendida para usar vetores e detectar múltiplos recursos de cada tipo.</p>
+<ul>
+<li>Quando detectar um deadlock?<ul>
+<li>Periodicamente </li>
+<li>A cada nova solicitação de recurso</li>
+<li>Quando a utlização de CPU for baixa</li>
+</ul>
+</li>
+</ul>
+<p>Na segunda fase (recuperação) é necessário recuperar um deadlock:</p>
+<ul>
+<li>Preempção</li>
+<li>Rollback</li>
+<li>Eliminação de processos  </li>
+</ul>
+<h4 id="preempcao">Preempção</h4>
+<p>Em alguns casos pode ser viável tomar um recursos do seu proprietário à força e devolvê-lo posteriormente. é muito dependente da natureza do recurso e pode tornar-se uma operação complexa. Escolher o processo a ser suspenso depende muito de quais processos tem recursos que podem ser devolvidos mais facilmente.</p>
+<h4 id="roolbacks">Roolbacks</h4>
+<p>Ao saber que a possiblidade de deadlock é grande, pode-se utilizar um arquivo de log que é atualizado periodicamente, que contém uma imagem do processo naquele momento. Esse ponto salvaguarda (checkpoint) permite que o processo seja reinicializado a partir daquele moemento, em algum instante futuro.</p>
+<ul>
+<li>Quando um deadlock é detectado, sabe-se quais recursos são necessários, para realizar a recuperação, escolhe-se um processo em posse dos recursos e realiza o seu rollback até um momento anterior à aquisição dos recursos. Desta forma, os recursos podem ser entregues a outros processos e eles não são prejudicados.</li>
+</ul>
+<h4 id="eliminacao-de-projetos">Eliminação de Projetos</h4>
+<p>Provavelmente a maneira mais bruta de se eliminar um deadlock, pois ele remove os processos que estão em deadlock para quebrar os ciclos, com um pouco de sorte (pois podem exitir múltiplos ciclos), é possível que o deadlock se resolva rapidamente.</p>
+<ul>
+<li>Quando for possível, deve-se eliminar um processo que possa ser reexecutado desde o ínicio sem grandes perdas ou danos. Alguns processos como atualizadores de bancos de dados podem, nem sempre, executar mais uma vez com segurança.</li>
+</ul>
+<h3 id="evitar-o-deadlock">Evitar o Deadlock</h3>
+<p>Anteriormente, presumimos que a alocação de recursos, eles são obtidos e solicitados todos de uma vez, essa náo é a realidade da maioria dos S.O. Na detecção de deadlocks estamos preocupados em fazer o sistema decidir para qual processo libera o recurso, baseado em uma descisão correta.</p>
+<ul>
+<li>Os algoritmos para evitar deadlocks são baseados em estados seguros</li>
+<li>
+<p>Diz-se que um estado é seguro se existir alguma ordem de esclonamento no qual todos os processos puderem ser executados até sua conclusão mesmo que todos solicitem seu número máximo de recursos subitamente.</p>
+</li>
+<li>
+<p>Desta forma, o processo P possui uma tabela de recursos que obteve R e o número máximo de recursos que ele pode obter M. Um exemplo, o estado é seguro, pois existe uma política de escalonamento que permite a execução. No entando, é possível que se atender o processo A, antes do B, pode-se levar a um estado inseguro. Não há sequência que garanta a conclusão.</p>
+</li>
+<li>Um estado inseguro não é um estado de impasse, pode ser que o processo A libere um recursos e o sistema finalize, mas o sistema não tem como adivinhar o que irá ocorrer.</li>
+<li>A difereça é que <strong>não pode garantir a finalização</strong>.</li>
+</ul>
+<p>Um algoritmo de escalonamento para evitar deadlocks foi desenvolvido por Dijkstra, 1965. A ideia é que o banqueiro possa garantir recursos para seus cliente. Pode ser generalizado para múltiplos recursos.</p>
+<h3 id="prevenir-o-deadlock">Prevenir o Deadlock</h3>
+<p>As 4 condições precisam ocorrer para se ter um deadlock. Se uma delas na2o ocorrer, o deadlock não ocorrerá.</p>
+<ul>
+<li>Para prevenir, podemos:<ul>
+<li>Atacar a condição de exclusão mútua</li>
+<li>Atacar a condição de posse e espera</li>
+<li>Atacar a condição de não-preempção</li>
+<li>Atacar a condição de espera circular</li>
+</ul>
+</li>
+</ul>
+<h4 id="impedir-exclusao-mutua">Impedir exclusão mútua</h4>
+<ul>
+<li>Impedir a exclusão mútua, se nunca acontecer de um recursos ser alocado exclusivamente para um processo, acaba com o problema do deadlock, nenhum outro processo irá esperar pelo recurso. É possível centralizar o processo de controle do recurso, e fazer os outros processos se comunicarem com ele (troca de mensagens).</li>
+</ul>
+<p>Ex.: Spool de impressão, SGBD para registro </p>
+<ul>
+<li>Nem todos os recursos podem ser gerenciados assim, muitas vezes na prática é inviável, no entando a ideia de diminuir ao máximo o número de processos que possui acesso ao recurso pode ser uma boa prática</li>
+</ul>
+<h4 id="impedir-a-posse-e-espera">Impedir a posse e espera</h4>
+<p>Se evitarmos que os processo que possuem recursos, peçam mais recursos, o problema pode ser resolvido, uma solução é fazer os processos pedirem rodos os recursos que necessitam, antes da execução.</p>
+<ul>
+<li>Nem sempre sabe-se recursos serão necessários, é um desperdício, ficar muito tempo com o recursos se não for utilizá-lo, uma outra tática é fazer que o processo solicita o recurso deve liberar todos os recursos que adiquiriu anteriormente, para depois adiquirir todos o que precisar. <strong>Isto pode ser muito complexo</strong>.</li>
+</ul>
+<h4 id="impedir-a-nao-preempcao">Impedir a não-preempção</h4>
+<p>Garantir uma maneira de sempre retirar um recurso de um processo, isso pode causar sérios problemas no funcionamento e pode levar a resultados inesperados.</p>
+<h4 id="impedir-a-espera-circular">Impedir a espera Circular</h4>
+<p>Forçar que um porocesso tenha apenas um recurso por vez, porém para cenários complicados esta restrição é inviável. É possível manter uma numeração global de todos os recursos do sistema e fazer com que os processos sigam a ordem de requisição dos recursos. </p>
+<ul>
+<li>
+<p>Como a ordem de requisição é a mesma, pode-se impedir ciclos nos grafos de requisição</p>
+</li>
+<li>
+<p>Problema: Grande quantidade de recursos exige uma quantidade muito grande, que não é facilmente enumerada</p>
+</li>
+</ul>
+<h3 id="deadlock-envolvendo-3-processos">Deadlock Envolvendo 3 Processos</h3>
+<p>Neste caso, temos uma situação de deadlock que ocorre em três processos. </p>
+<ul>
+<li>Não é obritagatório que todos os processos peçam todos os recursos ao mesmo tempo</li>
+</ul>
+<h2 id="concluao">Concluão</h2>
+<p>Os deadlocks precisam de quatro condições para ocorrer, ocorrem quando todos os membros de um conjunto são bloquados esperando por eventos que somente pode ser causados por membros desse conjunto, essa situação faz que todos processo esperem para sempre.</p>
+<ul>
+<li>A maioria dos S.O modernos <strong>Ignoram e não detectam</strong>, pois isto é <strong>resposabilidade para os programadores</strong> de conhecer os mecanismos de prevenção de deadlock e <strong>implementá-los</strong>.</li>
+</ul>
 
 
 
