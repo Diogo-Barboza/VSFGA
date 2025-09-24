@@ -40,6 +40,7 @@ nav:
       - Threads - Módulo 3: sections/2025.2/FSO/modulo3.md
       - Comunicação entre Threads - Módulo 4: sections/2025.2/FSO/modulo4.md
       - Problemas Clássicos de IPC e Deadlock - Módulo 5: sections/2025.2/FSO/modulo5.md
+      - Fundamentos Unix - Módulo 6: sections/2025.2/FSO/modulo6.md
     - Compiladores: 
       - Plano de Ensino: sections/2025.2/COMP/planoEnsino.md
       - Brainfuck: sections/2025.2/COMP/brainfuck.md
