@@ -49,8 +49,4 @@ int main () {
 }
 
 
-typedef struct celula { 
-    int dado;
-    struct celula *esq, *dir;
-} celula;
 
