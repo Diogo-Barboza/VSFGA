@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/diogobarboza/vsfga/FSO/trabalho1/roundRobin'
+relocations:     []
+...

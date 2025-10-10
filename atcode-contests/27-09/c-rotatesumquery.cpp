@@ -18,7 +18,8 @@ int main(){
     }
 
 
-    // // soma de prefixo
+
+    // // soma de prefixo com um vetor 2x o tam, com todas as somas de prefixos possiveis.
     // for(int i = 1; i <= n; i++){
     //     pre[i] += pre[i-1];
     // }
