@@ -1,38 +1,39 @@
 #include <bits/stdc++.h>
 
 using namespace std;
-const int MAX = { 300010};
-vector<int> vs[MAX];
-int oldAns = 0;
+const int MAX = {51};
+const int MIN = {1};
+int vs[MAX][MIN];
 
-int solve(vector<int> const &olha, int n, int q){
-    //Limpo os TODOS os indices 
+void criaGrafo(vector<int> const &olha, int n){
+    // Limpo os TODOS os indices
     for (int i = 0; i < MAX; ++i)
-        vs[i].clear();
+        vs[i][0] = 0;
 
-    //Coloco os índices da ocorrencia de cada
+    // Coloco os índices da primeira ocorrencia de cada
     for (int i = 1; i <= n; i++){
-        vs[olha[i]].emplace_back(i);
+        if (vs[olha[i]][0] == 0)
+            vs[olha[i]][0] = i;
     }
-
-    int ans = vs[q][0];
-    vs[q][0] = 1;
-    
-    // Pode ser um problema pos é quadratico.
-    for (int i = 1; i <= n; i++){
-        for (int j = 0; j < vs[i].size(); j++){
-            if(vs[i][j] < ans)
-                vs[i][j]++;
-        }
-    }
-
-    // nao ta atualizando os numeros..
-
-    return ans;
-    
 }
 
-int main(){
+int solve(vector<int> const &olha, int q){
+
+    int ans = vs[q][0]; 
+    
+    // Atualiza os indices menores q a resposta;
+    for(int i = 1; i < MAX; i++){
+        if(vs[i][0] < ans)
+        vs[i][0]++;
+    }
+    
+    vs[q][0] = 1;
+
+    return ans;
+}
+
+int main()
+{
 
     ios::sync_with_stdio(false);
 
@@ -41,14 +42,16 @@ int main(){
 
     vector<int> src(n+1);
 
-    for (int i = 0; i < n; i++){
-        cin >> src[i+1];        
+    for (int i = 1; i <= n; i++){
+        cin >> src[i];        
     }
+
+    criaGrafo(src, n);
+
     for (int j = 0; j < q; j++)
     {
         cin >> aux;
-        cout << solve(src, n, aux) << " ";
-        oldAns = solve(src, n, aux);
+        cout << solve(src, aux) << " ";
     }
 
     cout << "\n";
