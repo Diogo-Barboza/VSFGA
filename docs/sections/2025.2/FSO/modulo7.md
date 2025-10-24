@@ -43,7 +43,18 @@ Porém, observe que nesse caso dois programas iguais não podem executar ao mesm
 - A porção ROM é chamada de BIOS
 - Multiprogramação, faz partições de memória, porém isso não é trivial, para mudar o tamanho dessas partições é preciso reiniciar o SO.
 
+### Com Abstração de Memória
+
+- Busca tratar memória como algo relativo dentro do processo.
+- Solução simples de realocação dinâmica
+- Todos os endereços no cóodigo binário executável são de 0 a X
+- Uso de registradores base e limite permite o esquema de partic1ões de tamanho variável
+
+Desta forma, o sisteman não aloca previamente espações de memória, mas a medida que os programas são criados, uma área de memória com o tamanho necessário para o programa é reservada a eles.
 
 ## Algortimos de Controle de Memória
+
+
+
 
 ## Swapping e Overlay
