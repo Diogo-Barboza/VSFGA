@@ -3,6 +3,15 @@
 using namespace std;
 const int MAX = {2010};
 vector<int> vs[MAX];
+vector<int> chefes(MAX);
+int groups = 0;
+
+void dfs(int funcionario, int nivelAtual){
+    groups = max(groups, nivelAtual);
+
+    for(auto i : vs[funcionario])
+        dfs(i, nivelAtual+1);
+}
 
 void clearVector(vector<int> const &src, int n){
     for(int i = 0; i <= n; i++){
@@ -10,27 +19,18 @@ void clearVector(vector<int> const &src, int n){
     }
 
     for (int i = 1; i <= n; i++){
-        if(src[i] == -1)
-            vs[i].emplace_back(-1);
-        else
+        if(src[i] != -1)
             vs[src[i]].emplace_back(i);
+        else 
+            chefes.emplace_back(i);
     }
 }
 
-// 1: -1, 2, 4
-// 2: 3
-// 3:
-// 4:
-// 5: -1
-
-int solve(vector<int> const &src, int n){
-    int qtdGrupos = 0;
-    for (int i = 1; i <= n; i++)
-        if(!vs[i].empty())
-            qtdGrupos++;
-    
-    return qtdGrupos;
+void solve(){
+    for(auto v : chefes)
+        dfs(v, 1);
 }
+
 
 int main(){
     ios::sync_with_stdio(false);
@@ -39,15 +39,15 @@ int main(){
 
     cin >> n;
 
-    
-    // lendo todos os employees
     for(int i = 1; i <= n; i++){
         cin >> src[i];
     }
 
     clearVector(src, n);
 
-    cout << solve(src, n) << "\n";
+    solve();
+
+    cout << groups << "\n";
 
     return 0;
 }
