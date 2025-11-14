@@ -1,53 +1,30 @@
 #include <bits/stdc++.h>
-#define MAX 200010
 using namespace std;
 
 int t, n;
-string enemy, gregor;
+string gregor, enemy;
 
 
-void solve(int n){
+int solve(int n){ // Linear
     int sum = 0;
     for (int i = 0; i < n; i++){
-        // Da ponta esq
-        if(gregor[i] == '1' && i == 0){
-            if(enemy[i] == 0){
+        if(gregor[i] == '1'){
+            if(enemy[i] == '0'){ // Reto
                 sum++;
                 enemy[i] = '2';
             }
-            else if(enemy[i+1] == '1'){
+            else if(i > 0 && enemy[i-1] == '1'){ // Diagonal Esq
+                sum++;
+                enemy[i-1] = '2';
+            }
+            else if(i < n && enemy[i+1] == '1'){ // Diagonal Dir
                 sum++;
                 enemy[i+1] = '2';
             }
         }
-        // Da ponta Dir
-        else if(gregor[i] == '1' && i == n){
-            if(enemy[i] == 0){
-                sum++;
-                enemy[i] = '2';
-            }
-            else if(enemy[i-1] == '1'){
-                sum++;
-                enemy[i-1] = '2';
-            }
-        }
+    } 
 
-        // Do meio
-        if(gregor[i] == '1' && enemy[i] == '0'){
-            sum++;
-            enemy[i] = '2';
-        }
-        else if (gregor[i] == '1' && enemy[i-1] == '1'){
-            sum++;
-            enemy[i-1] = '2';
-        }
-        else if(gregor[i] == '1' && enemy[i+1] == '1'){
-            sum++;
-            enemy[i+1] = '2';
-        }
-    }
-
-    cout << sum << "\n";
+    return sum;
 }
 
 int main(){
@@ -59,8 +36,8 @@ int main(){
     {
         cin >> n;
         cin >> enemy >> gregor;
-
-        solve(n);
+        
+        cout << solve(n) << "\n";
     }
     
     
