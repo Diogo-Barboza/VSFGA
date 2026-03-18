@@ -43,6 +43,9 @@ nav:
       - Fundamentos Unix - Módulo 6: sections/2025.2/FSO/modulo6.md
       - Pthread - Módulo 6: sections/2025.2/FSO/modulo601.md
       - Memória - Módulo 7: sections/2025.2/FSO/modulo7.md
+      - Memória Virtual - Módulo 8: sections/2025.2/FSO/modulo8.md
+      - Sistemas de Arquivos - Módulo 9: sections/2025.2/FSO/modulo9.md
+      - Gerenciados de Dispositivos - Módulo 10: sections/2025.2/FSO/modulo10.md
     - Compiladores: 
       - Plano de Ensino: sections/2025.2/COMP/planoEnsino.md
       - Brainfuck: sections/2025.2/COMP/brainfuck.md

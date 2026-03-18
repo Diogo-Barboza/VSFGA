@@ -7,7 +7,7 @@ Memória RAM é um dos principais recursos computacaionais e precisa ser cuidado
 - O foco da gerência de memória é da RAM
 - Já a memória secundária (Discos, etc) serão vistas na gerência de arquivos 
 
-## Funcções Básicas
+## Funções Básicas
 
 - Programas são armazenados em memória secundária e precisam ser transferidas para a memória principal
 - O SO deve transferir programas da memória secundária para a principal antes de serem executados
@@ -52,9 +52,16 @@ Porém, observe que nesse caso dois programas iguais não podem executar ao mesm
 
 Desta forma, o sisteman não aloca previamente espações de memória, mas a medida que os programas são criados, uma área de memória com o tamanho necessário para o programa é reservada a eles.
 
-## Algortimos de Controle de Memória
+## Algortimos de Controle de Memória, Swapping e Overlay
 
+- **Algoritmos de Controle**: São as "regras de etiqueta" da memória. O sistema precisa decidir qual dado remover quando a RAM enche. O mais comum é o LRU (Least Recently Used): o sistema joga fora o que não é usado há mais tempo.
 
+> Exemplo: Imagine uma mesa de estudos pequena, você guarda na gaveta o livro que não abre há horas para dar lugar ao que acabou de chegar.
 
+- **Swapping**: É a técnica de tirar um programa inteiro da RAM e jogá-lo temporariamente no disco rígido para liberar espaço, trazendo-o de volta depois.
 
-## Swapping e Overlay
+> Exemplo: Você para de ler um livro e o coloca na estante para poder abrir outro na mesa. Quando precisar do primeiro, destroca.
+
+- **Overlay**: Técnica antiga onde o próprio programador dividia o programa em partes. Só a parte necessária para aquele momento era carregada.
+
+> Exemplo: Um manual de instruções tão grande que você só destaca e leva para a oficina a página do motor, deixando o resto em casa.
