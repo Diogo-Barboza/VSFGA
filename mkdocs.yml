@@ -33,6 +33,7 @@ nav:
     - Estruturas de Dados 2025.2:
       - Plano de Ensino: sections/2025.2/EDA2/planoEnsino.md
       - Árvores Binárias: sections/2025.2/EDA2/arvore.md
+      - Resumo do Semestre: sections/2025.2/EDA2/resumeEDA2.md
     - Fundamentos de Sistemas Operacionais:
       - Plano de ensino: sections/2025.2/FSO/planoEnsino.md
       - Conceitos Iniciais - Módulo 1: sections/2025.2/FSO/conceitosIniciais.md
@@ -51,6 +52,7 @@ nav:
       - Brainfuck: sections/2025.2/COMP/brainfuck.md
       - JSON: sections/2025.2/COMP/json.md
       - LISP: sections/2025.2/COMP/lisp.md
+      - Resumo do Semestre: sections/2025.2/COMP/resumeCompila.md
     - TPPE:
       - Design Patterns: sections/2025.2/TPPE/designPattern.md
       - Framework JUnit: sections/2025.2/TPPE/frameworkJunit.md
