@@ -30,6 +30,7 @@ nav:
   - 2025.2:
     - Projeto de Algoritmos:
       - Plano de Ensino: sections/2025.2/PALG/planoEnsino.md
+      - Resumo do Semestre: sections/2025.2/PALG/resumePAlg.md
     - Estruturas de Dados 2025.2:
       - Plano de Ensino: sections/2025.2/EDA2/planoEnsino.md
       - Árvores Binárias: sections/2025.2/EDA2/arvore.md
@@ -56,12 +57,19 @@ nav:
     - TPPE:
       - Design Patterns: sections/2025.2/TPPE/designPattern.md
       - Framework JUnit: sections/2025.2/TPPE/frameworkJunit.md
-  - Treinos:
-    - Início: sections/treino/treinoshome.md
-    - Peito e Tríceps: sections/treino/A.md
-    - Costas e Bíceps: sections/treino/B.md
-    - Perna Completo: sections/treino/C.md
-    - Ombro, Trapézio e Abdômen: sections/treino/D.md
+      - Resumo do Semestre: sections/2025.2/TPPE/resumeTPPE.md
+  # - 2026.1:
+    # - Sistemas Automotivos:
+    # - Qualidades de Software:
+    # - Fundamentos de Redes de Computadores:
+    # - Fundamentos de Sistemas Embarcados:
+    # - PI2:
+  # - Treinos:
+  #   - Início: sections/treino/treinoshome.md
+  #   - Peito e Tríceps: sections/treino/A.md
+  #   - Costas e Bíceps: sections/treino/B.md
+  #   - Perna Completo: sections/treino/C.md
+  #   - Ombro, Trapézio e Abdômen: sections/treino/D.md
     
 theme:
   name: material
