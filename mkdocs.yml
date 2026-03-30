@@ -58,9 +58,10 @@ nav:
       - Design Patterns: sections/2025.2/TPPE/designPattern.md
       - Framework JUnit: sections/2025.2/TPPE/frameworkJunit.md
       - Resumo do Semestre: sections/2025.2/TPPE/resumeTPPE.md
-  # - 2026.1:
+  - 2026.1:
     # - Sistemas Automotivos:
-    # - Qualidades de Software:
+    - Qualidades de Software:
+      - Visões de Qualidade: sections/2026.1/QualidadeSW/visoesQualidade.md
     # - Fundamentos de Redes de Computadores:
     # - Fundamentos de Sistemas Embarcados:
     # - PI2:
