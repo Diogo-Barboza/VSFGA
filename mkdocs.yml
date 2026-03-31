@@ -62,7 +62,8 @@ nav:
     # - Sistemas Automotivos:
     - Qualidades de Software:
       - Visões de Qualidade: sections/2026.1/QualidadeSW/visoesQualidade.md
-    # - Fundamentos de Redes de Computadores:
+    - Fundamentos de Redes de Computadores:
+      - Enlance de Dados e Rede: sections/2026.1/REDES/enlanceDadosRedes.md
     # - Fundamentos de Sistemas Embarcados:
     # - PI2:
   # - Treinos:
