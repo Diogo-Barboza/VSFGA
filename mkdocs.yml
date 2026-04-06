@@ -63,6 +63,7 @@ nav:
     - Qualidades de Software:
       - Visões de Qualidade: sections/2026.1/QualidadeSW/visoesQualidade.md
     - Fundamentos de Redes de Computadores:
+      - Plano de ensino: sections/2026.1/REDES/planoEnsino.md
       - Enlance de Dados e Rede: sections/2026.1/REDES/enlanceDadosRedes.md
       - Tecnologia de Rede LAN`s: sections/2026.1/REDES/tecnologiaLan.md
     # - Fundamentos de Sistemas Embarcados:
